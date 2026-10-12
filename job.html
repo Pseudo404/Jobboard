@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Détails de l'offre - Cap'Val</title>
+  </head>
+  <body class="min-h-screen bg-slate-900 font-sans text-gray-100 antialiased">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-700 bg-slate-900/90 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+      >
+        <ul class="flex items-center gap-3 sm:gap-6">
+          <li class="p-2">
+            <a
+              href="index.html"
+              class="text-sm font-semibold text-blue-400 transition hover:text-blue-300 sm:text-base"
+              >Accueil</a
+            >
+          </li>
+          <li class="p-2">
+            <a
+              href="#"
+              class="text-sm font-semibold text-gray-300 transition hover:text-blue-400 sm:text-base"
+              >Toutes les offres</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main
+      id="main-content"
+      class="mx-auto min-h-[70vh] max-w-7xl px-6 py-12 lg:px-8"
+    >
+      <a
+        href="index.html"
+        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white mb-8 transition"
+      >
+        &larr; Retour aux offres
+      </a>
+
+      <!-- Conteneur principal Grid (Détails à gauche, Comparateur à droite) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- COLONNE GAUCHE : Détails de l'offre -->
+        <div class="lg:col-span-2 space-y-6">
+          <div
+            class="rounded-2xl bg-slate-800 p-8 border border-slate-700 shadow-lg"
+          >
+            <div class="flex flex-wrap items-center gap-3 mb-6" id="job-tags">
+              <!-- Tags injectés en JS -->
+            </div>
+
+            <h1
+              id="job-title"
+              class="text-3xl sm:text-4xl font-extrabold text-white mb-2"
+            >
+              Chargement...
+            </h1>
+            <p
+              id="job-company-location"
+              class="text-lg font-medium text-blue-400 mb-8"
+            ></p>
+
+            <h2 class="text-xl font-bold text-white mb-4">
+              Description du poste
+            </h2>
+            <p
+              id="job-description"
+              class="text-gray-300 leading-relaxed mb-8"
+            ></p>
+
+            <h2 class="text-xl font-bold text-white mb-4">Conditions</h2>
+            <ul class="space-y-3 text-gray-300 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="font-semibold text-gray-400">Salaire :</span>
+                <span id="job-salary"></span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="font-semibold text-gray-400">Contrat :</span>
+                <span id="job-contract"></span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="font-semibold text-gray-400">Télétravail :</span>
+                <span id="job-remote"></span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="font-semibold text-gray-400">Expérience :</span>
+                <span id="job-exp"></span>
+              </li>
+            </ul>
+
+            <button
+              class="w-full sm:w-auto rounded-xl bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-sm hover:bg-blue-500 transition"
+            >
+              Postuler maintenant
+            </button>
+          </div>
+        </div>
+
+        <!-- COLONNE DROITE : Le Comparateur "Pack Vie + Job" -->
+        <div class="lg:col-span-1">
+          <div
+            class="sticky top-24 rounded-2xl bg-blue-900/20 p-6 border border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
+          >
+            <h3 class="text-xl font-bold text-white mb-2">
+              Votre Pack Vie + Job
+            </h3>
+            <p class="text-sm text-gray-400 mb-6">
+              Comparaison de votre reste à vivre estimé avec cette offre, par
+              rapport à Paris.
+            </p>
+
+            <!-- Carte Orléans (L'offre actuelle) -->
+            <div
+              class="bg-slate-800 rounded-xl p-5 mb-4 border border-blue-800/50"
+            >
+              <h4 class="font-bold text-blue-400 mb-4 text-center">
+                Avec cette offre (Centre-Val de Loire)
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                <li class="flex justify-between">
+                  <span>Salaire Net Mensuel</span>
+                  <span id="orleans-net" class="font-medium text-white"
+                    >...</span
+                  >
+                </li>
+                <li class="flex justify-between">
+                  <span>Loyer estimé (40m²)</span>
+                  <span class="text-orange-300">- 480 €</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Transport local</span>
+                  <span class="text-orange-300">- 52 €</span>
+                </li>
+              </ul>
+              <div
+                class="border-t border-slate-700 pt-3 flex justify-between items-center"
+              >
+                <span class="font-bold text-white">Reste à vivre</span>
+                <span
+                  id="orleans-reste"
+                  class="text-xl font-black text-emerald-400"
+                  >...</span
+                >
+              </div>
+            </div>
+
+            <!-- Carte Paris (La comparaison) -->
+            <div
+              class="bg-slate-800/50 rounded-xl p-5 border border-slate-700 opacity-75"
+            >
+              <h4 class="font-bold text-gray-400 mb-4 text-center">
+                À salaire équivalent (Paris)
+              </h4>
+              <ul class="space-y-2 text-sm text-gray-400 mb-4">
+                <li class="flex justify-between">
+                  <span>Salaire Net Mensuel</span>
+                  <span id="paris-net" class="font-medium">...</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Loyer estimé (40m²)</span>
+                  <span class="text-red-400/80">- 1 040 €</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Transport (Navigo)</span>
+                  <span class="text-red-400/80">- 91 €</span>
+                </li>
+              </ul>
+              <div
+                class="border-t border-slate-700 pt-3 flex justify-between items-center"
+              >
+                <span class="font-bold text-gray-300">Reste à vivre</span>
+                <span id="paris-reste" class="text-lg font-black text-white"
+                  >...</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="border-t border-slate-800 bg-slate-900 py-8 text-center text-gray-500 text-sm mt-12"
+    >
+      Hackathon Hussar Academy - Projet Cap'Val
+    </footer>
+
+    <script type="module" src="./job.js"></script>
+  </body>
+</html>
