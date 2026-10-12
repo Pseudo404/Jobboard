@@ -1,4 +1,4 @@
-// Prompt : ia avoir des fausses offres d'emploi pour la région Centre
+// Prompt : ia avoir des fausses offres d'emploi pour la région Centre (Formatées en Brut Annuel)
 
 const seedJobs = [
   {
@@ -34,7 +34,7 @@ const seedJobs = [
     entreprise: "Bureau Services 45",
     secteur: "Administration",
     contrat: "CDD",
-    salaire: "1 900 - 2 100 €/mois",
+    salaire: "22 800 - 25 200 €/an",
     lieu: "Orléans (45)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
@@ -47,7 +47,7 @@ const seedJobs = [
     entreprise: "Résidence des Tilleuls",
     secteur: "Santé",
     contrat: "CDI",
-    salaire: "2 000 - 2 400 €/mois",
+    salaire: "24 000 - 28 800 €/an",
     lieu: "Tours (37)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
@@ -61,7 +61,7 @@ const seedJobs = [
     entreprise: "LogiCentre",
     secteur: "Logistique",
     contrat: "Intérim",
-    salaire: "12,50 €/heure",
+    salaire: "22 750 €/an",
     lieu: "Saran (45)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
@@ -100,7 +100,7 @@ const seedJobs = [
     entreprise: "Les Jardins du Val",
     secteur: "Social",
     contrat: "CDD",
-    salaire: "1 900 - 2 200 €/mois",
+    salaire: "22 800 - 26 400 €/an",
     lieu: "Romorantin-Lanthenay (41)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
@@ -140,7 +140,7 @@ const seedJobs = [
     entreprise: "Maison & Déco",
     secteur: "Vente",
     contrat: "CDD",
-    salaire: "1 800 - 2 000 €/mois",
+    salaire: "21 600 - 24 000 €/an",
     lieu: "Olivet (45)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
@@ -181,7 +181,7 @@ const seedJobs = [
     entreprise: "Propreté Loire",
     secteur: "Services",
     contrat: "Temps partiel",
-    salaire: "12,10 €/heure",
+    salaire: "22 000 €/an",
     lieu: "Amboise (37)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
@@ -250,7 +250,7 @@ const seedJobs = [
     entreprise: "Ferme des Horizons",
     secteur: "Agriculture",
     contrat: "Saisonnier",
-    salaire: "12 €/heure",
+    salaire: "21 840 €/an",
     lieu: "Dhuizon (41)",
     teletravail: "Sur exploitation",
     experience: "Débutant accepté",
