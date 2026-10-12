@@ -1,8 +1,6 @@
+// Prompt : ia avoir des fausses offres d'emploi pour la région Centre (Formatées en Brut Annuel)
 
-// Prompt : ia avoir des fausses offres d'emploi pour la région Centre
-
-
-const jobs = [
+const seedJobs = [
   {
     id: 1,
     titre: "Développeur Web Full Stack",
@@ -14,7 +12,7 @@ const jobs = [
     teletravail: "Hybride",
     experience: "Débutant accepté",
     description: "Développer et maintenir des applications web modernes.",
-    datePublication: "2026-10-10"
+    datePublication: "2026-10-10",
   },
   {
     id: 2,
@@ -26,8 +24,9 @@ const jobs = [
     lieu: "Blois (41)",
     teletravail: "Sur site",
     experience: "2 ans",
-    description: "Assurer la maintenance préventive et corrective des machines.",
-    datePublication: "2026-10-09"
+    description:
+      "Assurer la maintenance préventive et corrective des machines.",
+    datePublication: "2026-10-09",
   },
   {
     id: 3,
@@ -35,12 +34,12 @@ const jobs = [
     entreprise: "Bureau Services 45",
     secteur: "Administration",
     contrat: "CDD",
-    salaire: "1 900 - 2 100 €/mois",
+    salaire: "22 800 - 25 200 €/an",
     lieu: "Orléans (45)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
     description: "Gérer les dossiers, les appels et le suivi administratif.",
-    datePublication: "2026-10-11"
+    datePublication: "2026-10-11",
   },
   {
     id: 4,
@@ -48,12 +47,13 @@ const jobs = [
     entreprise: "Résidence des Tilleuls",
     secteur: "Santé",
     contrat: "CDI",
-    salaire: "2 000 - 2 400 €/mois",
+    salaire: "24 000 - 28 800 €/an",
     lieu: "Tours (37)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
-    description: "Accompagner les résidents dans les actes de la vie quotidienne.",
-    datePublication: "2026-10-08"
+    description:
+      "Accompagner les résidents dans les actes de la vie quotidienne.",
+    datePublication: "2026-10-08",
   },
   {
     id: 5,
@@ -61,12 +61,12 @@ const jobs = [
     entreprise: "LogiCentre",
     secteur: "Logistique",
     contrat: "Intérim",
-    salaire: "12,50 €/heure",
+    salaire: "22 750 €/an",
     lieu: "Saran (45)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
     description: "Préparer, contrôler et expédier les commandes clients.",
-    datePublication: "2026-10-12"
+    datePublication: "2026-10-12",
   },
   {
     id: 6,
@@ -79,7 +79,7 @@ const jobs = [
     teletravail: "Déplacements",
     experience: "1 an",
     description: "Développer un portefeuille clients et présenter les offres.",
-    datePublication: "2026-10-07"
+    datePublication: "2026-10-07",
   },
   {
     id: 7,
@@ -92,7 +92,7 @@ const jobs = [
     teletravail: "Sur chantier",
     experience: "2 ans",
     description: "Réaliser des installations électriques et des dépannages.",
-    datePublication: "2026-10-06"
+    datePublication: "2026-10-06",
   },
   {
     id: 8,
@@ -100,12 +100,12 @@ const jobs = [
     entreprise: "Les Jardins du Val",
     secteur: "Social",
     contrat: "CDD",
-    salaire: "1 900 - 2 200 €/mois",
+    salaire: "22 800 - 26 400 €/an",
     lieu: "Romorantin-Lanthenay (41)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
     description: "Organiser des activités adaptées aux personnes âgées.",
-    datePublication: "2026-10-10"
+    datePublication: "2026-10-10",
   },
   {
     id: 9,
@@ -118,7 +118,7 @@ const jobs = [
     teletravail: "Sur site",
     experience: "1 an",
     description: "Piloter une ligne de production et contrôler la qualité.",
-    datePublication: "2026-10-05"
+    datePublication: "2026-10-05",
   },
   {
     id: 10,
@@ -130,8 +130,9 @@ const jobs = [
     lieu: "Bourges (18)",
     teletravail: "Hybride",
     experience: "Débutant accepté",
-    description: "Participer à la saisie comptable et aux déclarations fiscales.",
-    datePublication: "2026-10-11"
+    description:
+      "Participer à la saisie comptable et aux déclarations fiscales.",
+    datePublication: "2026-10-11",
   },
   {
     id: 11,
@@ -139,12 +140,12 @@ const jobs = [
     entreprise: "Maison & Déco",
     secteur: "Vente",
     contrat: "CDD",
-    salaire: "1 800 - 2 000 €/mois",
+    salaire: "21 600 - 24 000 €/an",
     lieu: "Olivet (45)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
     description: "Conseiller les clients et participer à la mise en rayon.",
-    datePublication: "2026-10-04"
+    datePublication: "2026-10-04",
   },
   {
     id: 12,
@@ -156,8 +157,9 @@ const jobs = [
     lieu: "Issoudun (36)",
     teletravail: "Déplacements",
     experience: "2 ans",
-    description: "Assurer les livraisons régionales dans le respect des délais.",
-    datePublication: "2026-10-09"
+    description:
+      "Assurer les livraisons régionales dans le respect des délais.",
+    datePublication: "2026-10-09",
   },
   {
     id: 13,
@@ -169,8 +171,9 @@ const jobs = [
     lieu: "Tours (37)",
     teletravail: "Hybride",
     experience: "Débutant accepté",
-    description: "Résoudre les incidents informatiques et accompagner les utilisateurs.",
-    datePublication: "2026-10-12"
+    description:
+      "Résoudre les incidents informatiques et accompagner les utilisateurs.",
+    datePublication: "2026-10-12",
   },
   {
     id: 14,
@@ -178,12 +181,13 @@ const jobs = [
     entreprise: "Propreté Loire",
     secteur: "Services",
     contrat: "Temps partiel",
-    salaire: "12,10 €/heure",
+    salaire: "22 000 €/an",
     lieu: "Amboise (37)",
     teletravail: "Sur site",
     experience: "Débutant accepté",
-    description: "Assurer le nettoyage et l'entretien de locaux professionnels.",
-    datePublication: "2026-10-03"
+    description:
+      "Assurer le nettoyage et l'entretien de locaux professionnels.",
+    datePublication: "2026-10-03",
   },
   {
     id: 15,
@@ -196,7 +200,7 @@ const jobs = [
     teletravail: "Hybride",
     experience: "1 an",
     description: "Créer des contenus web et gérer les réseaux sociaux.",
-    datePublication: "2026-10-08"
+    datePublication: "2026-10-08",
   },
   {
     id: 16,
@@ -208,8 +212,9 @@ const jobs = [
     lieu: "Gien (45)",
     teletravail: "Sur site",
     experience: "1 an",
-    description: "Préparer les repas et respecter les normes d'hygiène alimentaire.",
-    datePublication: "2026-10-06"
+    description:
+      "Préparer les repas et respecter les normes d'hygiène alimentaire.",
+    datePublication: "2026-10-06",
   },
   {
     id: 17,
@@ -221,8 +226,9 @@ const jobs = [
     lieu: "Orléans (45)",
     teletravail: "Hybride",
     experience: "Débutant accepté",
-    description: "Participer au recrutement, à l'intégration et au suivi des salariés.",
-    datePublication: "2026-10-12"
+    description:
+      "Participer au recrutement, à l'intégration et au suivi des salariés.",
+    datePublication: "2026-10-12",
   },
   {
     id: 18,
@@ -234,8 +240,9 @@ const jobs = [
     lieu: "Tours (37)",
     teletravail: "Sur site",
     experience: "1 an",
-    description: "Réaliser des analyses et assurer la traçabilité des échantillons.",
-    datePublication: "2026-10-02"
+    description:
+      "Réaliser des analyses et assurer la traçabilité des échantillons.",
+    datePublication: "2026-10-02",
   },
   {
     id: 19,
@@ -243,12 +250,13 @@ const jobs = [
     entreprise: "Ferme des Horizons",
     secteur: "Agriculture",
     contrat: "Saisonnier",
-    salaire: "12 €/heure",
+    salaire: "21 840 €/an",
     lieu: "Dhuizon (41)",
     teletravail: "Sur exploitation",
     experience: "Débutant accepté",
-    description: "Participer aux travaux agricoles et à l'entretien de l'exploitation.",
-    datePublication: "2026-10-07"
+    description:
+      "Participer aux travaux agricoles et à l'entretien de l'exploitation.",
+    datePublication: "2026-10-07",
   },
   {
     id: 20,
@@ -260,9 +268,18 @@ const jobs = [
     lieu: "Bourges (18)",
     teletravail: "Hybride",
     experience: "Débutant accepté",
-    description: "Participer au suivi de projets numériques et aux tests fonctionnels.",
-    datePublication: "2026-10-10"
-  }
+    description:
+      "Participer au suivi de projets numériques et aux tests fonctionnels.",
+    datePublication: "2026-10-10",
+  },
 ];
+
+// Initialisation de la "Base de données" locale
+if (!localStorage.getItem("capval_jobs")) {
+  localStorage.setItem("capval_jobs", JSON.stringify(seedJobs));
+}
+
+// On exporte les données depuis le localStorage pour que toutes les pages voient les nouveautés
+const jobs = JSON.parse(localStorage.getItem("capval_jobs"));
 
 export default jobs;

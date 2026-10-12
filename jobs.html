@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Toutes les offres - Cap'Val</title>
+  </head>
+  <body class="min-h-screen bg-slate-900 font-sans text-gray-100 antialiased">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-700 bg-slate-900/90 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+      >
+        <ul class="flex items-center gap-3 sm:gap-6">
+          <li class="p-2">
+            <a
+              href="index.html"
+              class="text-sm font-semibold text-gray-400 transition hover:text-blue-400 sm:text-base"
+              >Accueil</a
+            >
+          </li>
+          <li class="p-2">
+            <a
+              href="jobs.html"
+              class="text-sm font-semibold text-blue-400 transition hover:text-blue-300 sm:text-base"
+              >Toutes les offres</a
+            >
+          </li>
+        </ul>
+        <ol class="flex items-center gap-2 sm:gap-4">
+          <li>
+            <a
+              href="#"
+              class="inline-flex items-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-semibold text-gray-300 shadow-sm transition hover:bg-slate-700 sm:px-4"
+              >Se connecter</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="inline-flex items-center rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-500 sm:px-5"
+              >S'inscrire / Recruter</a
+            >
+          </li>
+        </ol>
+      </nav>
+    </header>
+
+    <main class="mx-auto min-h-[70vh] max-w-7xl px-6 py-12 lg:px-8">
+      <div
+        class="mb-12 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+      >
+        <div>
+          <h1 class="text-3xl font-extrabold text-white mb-2">
+            Opportunités en Centre-Val de Loire
+          </h1>
+          <p class="text-gray-400">
+            Trouvez le poste idéal et comparez votre futur cadre de vie.
+          </p>
+        </div>
+      </div>
+
+      <!-- Conteneur de la grille d'offres -->
+      <div
+        id="all-jobs-container"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <p class="text-gray-500 text-center col-span-full">
+          Chargement des offres...
+        </p>
+      </div>
+    </main>
+
+    <footer
+      class="border-t border-slate-800 bg-slate-900 py-8 text-center text-gray-500 text-sm mt-12"
+    >
+      Hackathon Hussar Academy - Projet Cap'Val
+    </footer>
+
+    <script type="module" src="./jobs.js"></script>
+  </body>
+</html>
