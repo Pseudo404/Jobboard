@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Injecter les données de l'offre
   document.getElementById("job-title").textContent = job.titre;
   document.getElementById("job-company-location").textContent =
     `${job.entreprise} — ${job.lieu}`;
@@ -25,13 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("job-remote").textContent = job.teletravail;
   document.getElementById("job-exp").textContent = job.experience;
 
+  const evolutionElement = document.getElementById("job-evolution");
+  if (evolutionElement) {
+    evolutionElement.textContent =
+      job.evolution ||
+      "Évolution à définir avec le manager lors des entretiens.";
+  }
+
   const tagsHTML = `
         <span class="inline-flex items-center rounded-md bg-blue-400/10 px-3 py-1 text-sm font-medium text-blue-400 ring-1 ring-inset ring-blue-400/30">${job.secteur}</span>
         <span class="inline-flex items-center rounded-md bg-gray-400/10 px-3 py-1 text-sm font-medium text-gray-400 ring-1 ring-inset ring-gray-400/30">Publié le ${job.datePublication}</span>
     `;
   document.getElementById("job-tags").innerHTML = tagsHTML;
 
-  // Calcul du comparateur
+  // 4. Logique du Comparateur (Colonne Droite)
   const parseSalaireToAnnual = (salaireStr) => {
     if (!salaireStr || salaireStr.toLowerCase().includes("selon âge"))
       return 21203;
@@ -57,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const annualSalary = parseSalaireToAnnual(job.salaire);
     const netMonthly = (annualSalary * 0.75) / 12;
 
-    // Nouvelles charges incluant l'alimentaire
     const chargesParis = 1040 + 91 + 350; // Loyer + Navigo + Courses
     const chargesOrleans = 480 + 52 + 250; // Loyer + TAO + Courses
 

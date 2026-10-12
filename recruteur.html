@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Accès Recruteur - Publier une offre</title>
+  </head>
+  <body class="min-h-screen bg-slate-900 font-sans text-gray-100 antialiased">
+    <header
+      class="sticky top-0 z-50 border-b border-slate-700 bg-slate-900/90 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+      >
+        <ul class="flex items-center gap-3 sm:gap-6">
+          <li class="p-2">
+            <a
+              href="index.html"
+              class="text-sm font-semibold text-gray-400 hover:text-blue-400 transition"
+              >Accueil</a
+            >
+          </li>
+          <li class="p-2">
+            <a
+              href="jobs.html"
+              class="text-sm font-semibold text-gray-400 hover:text-blue-400 transition"
+              >Toutes les offres</a
+            >
+          </li>
+          <li class="p-2">
+            <a
+              href="recruteur.html"
+              class="text-sm font-semibold text-blue-400 hover:text-blue-300 transition"
+              >Accès recruteur</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="mx-auto max-w-3xl px-6 py-12">
+      <div class="mb-8">
+        <h1 class="text-3xl font-extrabold text-white mb-2">
+          Publier une opportunité
+        </h1>
+        <p class="text-gray-400">
+          Attirez les jeunes talents en Centre-Val de Loire en détaillant votre
+          offre et les perspectives d'évolution.
+        </p>
+      </div>
+
+      <form
+        id="job-form"
+        class="space-y-6 bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-lg"
+      >
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2"
+              >Titre du poste *</label
+            >
+            <input
+              type="text"
+              id="titre"
+              required
+              class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2"
+              >Entreprise *</label
+            >
+            <input
+              type="text"
+              id="entreprise"
+              required
+              class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2"
+              >Secteur *</label
+            >
+            <input
+              type="text"
+              id="secteur"
+              placeholder="Ex: Informatique, Industrie..."
+              required
+              class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2"
+              >Lieu *</label
+            >
+            <input
+              type="text"
+              id="lieu"
+              placeholder="Ex: Orléans (45)"
+              required
+              class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2"
+              >Contrat *</label
+            >
+            <select
+              id="contrat"
+              class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            >
+              <option value="CDI">CDI</option>
+              <option value="CDD">CDD</option>
+              <option value="Alternance">Alternance</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2"
+              >Salaire *</label
+            >
+            <input
+              type="text"
+              id="salaire"
+              placeholder="Ex: 35 000 €/an"
+              required
+              class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2"
+              >Télétravail</label
+            >
+            <select
+              id="teletravail"
+              class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            >
+              <option value="Hybride">Hybride</option>
+              <option value="Sur site">Sur site</option>
+              <option value="100% Télétravail">100% Télétravail</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-300 mb-2"
+              >Expérience</label
+            >
+            <input
+              type="text"
+              id="experience"
+              placeholder="Ex: Débutant accepté"
+              class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2"
+            >Description du poste *</label
+          >
+          <textarea
+            id="description"
+            rows="3"
+            required
+            class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-2"
+            >Évolution possible (2 à 5 ans) *</label
+          >
+          <textarea
+            id="evolution"
+            rows="2"
+            placeholder="Ex: Possibilité de devenir Chef de projet d'ici 3 ans..."
+            required
+            class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+          ></textarea>
+        </div>
+
+        <div
+          id="success-msg"
+          class="hidden rounded-lg bg-emerald-500/20 p-4 text-emerald-400 border border-emerald-500/50"
+        >
+          Offre publiée avec succès ! Redirection en cours...
+        </div>
+
+        <button
+          type="submit"
+          class="w-full rounded-xl bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-sm hover:bg-blue-500 transition"
+        >
+          Publier l'offre
+        </button>
+      </form>
+    </main>
+    <script type="module" src="./recruteur.js"></script>
+  </body>
+</html>

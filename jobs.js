@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3 class="text-xl font-bold text-white mb-1">${job.titre}</h3>
                     <p class="text-blue-400 text-sm font-medium mb-4">${job.entreprise} - ${job.lieu}</p>
                     <p class="text-gray-400 text-sm mb-6 line-clamp-2">${job.description}</p>
+                    
                 </div>
                 
                 <div class="border-t border-slate-700 pt-4 flex justify-between items-center mt-auto">
