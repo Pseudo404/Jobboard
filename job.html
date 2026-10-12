@@ -44,7 +44,7 @@
       </a>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- COLONNE GAUCHE : Détails -->
+        <!-- COLONNE GAUCHE : Détails de l'offre -->
         <div class="lg:col-span-2 space-y-6">
           <div
             class="rounded-2xl bg-slate-800 p-8 border border-slate-700 shadow-lg"
@@ -111,6 +111,7 @@
 
         <!-- COLONNE DROITE : Comparateur Dynamique -->
         <div class="lg:col-span-1 space-y-6">
+          <!-- Brique 1 : Financière -->
           <div
             class="top-24 rounded-2xl bg-blue-900/20 p-6 border border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
           >
@@ -202,24 +203,54 @@
 
           <!-- Brique 2 : Qualité de vie -->
           <div
-            class="rounded-2xl bg-slate-800 p-6 border border-slate-700 shadow-lg"
+            class="rounded-2xl bg-slate-800 p-6 border border-slate-700 shadow-lg mt-6"
           >
             <h3 class="text-lg font-bold text-white mb-4">
               Vos avantages Quotidien
             </h3>
             <ul class="space-y-4">
+              <!-- Facteur 1 : Temps de Trajet -->
               <li class="flex items-start gap-3">
                 <div class="mt-1 bg-emerald-500/20 p-2 rounded-lg">
                   <span class="text-emerald-400 text-lg">⏱️</span>
                 </div>
                 <div>
-                  <p class="font-bold text-gray-200">Temps gagné</p>
+                  <p class="font-bold text-gray-200">
+                    Temps de trajet (Bouchons)
+                  </p>
                   <p class="text-sm text-gray-400">
-                    + 1h de temps libre par jour (30 min de trajet moyen vs 1h30
-                    à Paris).
+                    <span
+                      id="local-time-gain"
+                      class="font-bold text-emerald-300"
+                      >...</span
+                    >
+                    gagnées par an. (<span id="local-traffic"></span> perdues
+                    aux heures de pointe vs 101h à Paris).
                   </p>
                 </div>
               </li>
+
+              <!-- Facteur 2 : Espaces verts -->
+              <li class="flex items-start gap-3">
+                <div class="mt-1 bg-green-500/20 p-2 rounded-lg">
+                  <span class="text-green-400 text-lg">🌳</span>
+                </div>
+                <div>
+                  <p class="font-bold text-gray-200">Accès à la Nature</p>
+                  <p class="text-sm text-gray-400">
+                    Environ
+                    <span
+                      id="local-green-space"
+                      class="font-bold text-green-300"
+                      >...</span
+                    >
+                    d'espaces verts par habitant (Contre un étouffant 5,8 m² à
+                    Paris).
+                  </p>
+                </div>
+              </li>
+
+              <!-- Facteur 3 : Espace de vie -->
               <li class="flex items-start gap-3">
                 <div class="mt-1 bg-blue-500/20 p-2 rounded-lg">
                   <span class="text-blue-400 text-lg">🏠</span>
@@ -227,7 +258,7 @@
                 <div>
                   <p class="font-bold text-gray-200">Gain d'espace</p>
                   <p class="text-sm text-gray-400">
-                    Pour le prix d'un 40m² parisien, louez
+                    Pour le prix d'un T2 (40m²) parisien, louez
                     <span id="local-space-gain" class="text-blue-300 font-bold"
                       >...</span
                     >
@@ -240,6 +271,11 @@
         </div>
       </div>
     </main>
+    <footer
+      class="border-t border-slate-800 bg-slate-900 py-8 text-center text-gray-500 text-sm mt-12"
+    >
+      Hackathon Hussar Academy - Projet Cap'Val
+    </footer>
     <script type="module" src="./job.js"></script>
   </body>
 </html>
