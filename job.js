@@ -1,3 +1,4 @@
+// On s'assure d'avoir le même chemin que dans main.js
 import jobs from "./asset/js/data.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -5,9 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const jobId = parseInt(params.get("id"));
 
-  // 2. Trouver l'offre correspondante dans data.js
+  // 2. Trouver l'offre correspondante dans le tableau
   const job = jobs.find((j) => j.id === jobId);
 
+  // Sécurité si l'offre n'existe pas ou si l'ID est invalide
   if (!job) {
     document.getElementById("main-content").innerHTML = `
             <div class="text-center py-20">
@@ -17,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // 3. Injecter les données dans la partie "Détails" (Colonne Gauche)
+  // 3. Injecter les données dans la partie "Détails"
   document.getElementById("job-title").textContent = job.titre;
   document.getElementById("job-company-location").textContent =
     `${job.entreprise} — ${job.lieu}`;
@@ -33,15 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   document.getElementById("job-tags").innerHTML = tagsHTML;
 
-  // 4. Logique du Comparateur (Colonne Droite)
+  // 4. Logique du Comparateur
   const parseSalaireToAnnual = (salaireStr) => {
     if (!salaireStr || salaireStr.toLowerCase().includes("selon âge"))
       return 21203;
+
     const cleanStr = salaireStr
       .toLowerCase()
       .replace(/\s/g, "")
       .replace(/,/g, ".");
     const numbers = cleanStr.match(/\d+(\.\d+)?/g);
+
     if (!numbers) return 0;
 
     const parsedNumbers = numbers.map(Number);
@@ -65,11 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const formatCurrency = (num) =>
       Math.round(num).toLocaleString("fr-FR") + " €";
 
+    // Affichage des salaires nets
     document.getElementById("orleans-net").textContent =
       formatCurrency(netMonthly);
     document.getElementById("paris-net").textContent =
       formatCurrency(netMonthly);
 
+    // Affichage du Reste à vivre
     document.getElementById("orleans-reste").textContent = formatCurrency(
       netMonthly - chargesOrleans,
     );
