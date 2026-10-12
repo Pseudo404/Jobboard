@@ -43,16 +43,16 @@
         &larr; Retour aux offres
       </a>
 
-      <!-- Conteneur principal Grid (Détails à gauche, Comparateur à droite) -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- COLONNE GAUCHE : Détails de l'offre -->
         <div class="lg:col-span-2 space-y-6">
           <div
             class="rounded-2xl bg-slate-800 p-8 border border-slate-700 shadow-lg"
           >
-            <div class="flex flex-wrap items-center gap-3 mb-6" id="job-tags">
-              <!-- Tags injectés en JS -->
-            </div>
+            <div
+              class="flex flex-wrap items-center gap-3 mb-6"
+              id="job-tags"
+            ></div>
 
             <h1
               id="job-title"
@@ -102,9 +102,10 @@
         </div>
 
         <!-- COLONNE DROITE : Le Comparateur "Pack Vie + Job" -->
-        <div class="lg:col-span-1">
+        <div class="lg:col-span-1 space-y-6">
+          <!-- Brique 1 : Le Reste à vivre -->
           <div
-            class="sticky top-24 rounded-2xl bg-blue-900/20 p-6 border border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
+            class="top-24 rounded-2xl bg-blue-900/20 p-6 border border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
           >
             <h3 class="text-xl font-bold text-white mb-2">
               Votre Pack Vie + Job
@@ -114,7 +115,7 @@
               rapport à Paris.
             </p>
 
-            <!-- Carte Orléans (L'offre actuelle) -->
+            <!-- Orléans -->
             <div
               class="bg-slate-800 rounded-xl p-5 mb-4 border border-blue-800/50"
             >
@@ -129,18 +130,24 @@
                   >
                 </li>
                 <li class="flex justify-between">
-                  <span>Loyer estimé (40m²)</span>
+                  <span>Loyer (40m²)</span>
                   <span class="text-orange-300">- 480 €</span>
                 </li>
                 <li class="flex justify-between">
                   <span>Transport local</span>
                   <span class="text-orange-300">- 52 €</span>
                 </li>
+                <li class="flex justify-between">
+                  <span>Courses (Moyenne)</span>
+                  <span class="text-orange-300">- 250 €</span>
+                </li>
               </ul>
               <div
                 class="border-t border-slate-700 pt-3 flex justify-between items-center"
               >
-                <span class="font-bold text-white">Reste à vivre</span>
+                <span class="font-bold text-white"
+                  >Reste à vivre (Loisirs/Épargne)</span
+                >
                 <span
                   id="orleans-reste"
                   class="text-xl font-black text-emerald-400"
@@ -149,7 +156,7 @@
               </div>
             </div>
 
-            <!-- Carte Paris (La comparaison) -->
+            <!-- Paris -->
             <div
               class="bg-slate-800/50 rounded-xl p-5 border border-slate-700 opacity-75"
             >
@@ -162,12 +169,16 @@
                   <span id="paris-net" class="font-medium">...</span>
                 </li>
                 <li class="flex justify-between">
-                  <span>Loyer estimé (40m²)</span>
+                  <span>Loyer (40m²)</span>
                   <span class="text-red-400/80">- 1 040 €</span>
                 </li>
                 <li class="flex justify-between">
                   <span>Transport (Navigo)</span>
                   <span class="text-red-400/80">- 91 €</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Courses (Moyenne)</span>
+                  <span class="text-red-400/80">- 350 €</span>
                 </li>
               </ul>
               <div
@@ -180,6 +191,54 @@
               </div>
             </div>
           </div>
+
+          <!-- Brique 2 : Qualité de vie (Nouveaux indicateurs) -->
+          <div
+            class="rounded-2xl bg-slate-800 p-6 border border-slate-700 shadow-lg"
+          >
+            <h3 class="text-lg font-bold text-white mb-4">
+              Vos avantages Quotidien
+            </h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="mt-1 bg-emerald-500/20 p-2 rounded-lg">
+                  <span class="text-emerald-400 text-lg">⏱️</span>
+                </div>
+                <div>
+                  <p class="font-bold text-gray-200">Temps gagné</p>
+                  <p class="text-sm text-gray-400">
+                    + 1h de temps libre par jour (30 min de trajet moyen vs 1h30
+                    à Paris).
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 bg-blue-500/20 p-2 rounded-lg">
+                  <span class="text-blue-400 text-lg">🏠</span>
+                </div>
+                <div>
+                  <p class="font-bold text-gray-200">Gain d'espace</p>
+                  <p class="text-sm text-gray-400">
+                    Pour le prix d'un 40m² parisien (1040€), louez
+                    <span class="text-blue-300 font-bold">~85m²</span> en
+                    Centre-Val de Loire.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 bg-yellow-500/20 p-2 rounded-lg">
+                  <span class="text-yellow-400 text-lg">🍻</span>
+                </div>
+                <div>
+                  <p class="font-bold text-gray-200">Sorties & Loisirs</p>
+                  <p class="text-sm text-gray-400">
+                    Pinte à 5€, restos abordables, accès direct à la nature et
+                    aux Bords de Loire.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
@@ -189,7 +248,6 @@
     >
       Hackathon Hussar Academy - Projet Cap'Val
     </footer>
-
     <script type="module" src="./job.js"></script>
   </body>
 </html>
