@@ -5,24 +5,30 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault(); // Empêche le rechargement de la page
 
-    // 1. Récupération des jobs existants dans le localStorage
+    // 1. Récupération des jobs existants
     const existingJobs = JSON.parse(localStorage.getItem("capval_jobs")) || [];
 
-    // 2. Génération de la date du jour au format YYYY-MM-DD
+    // 2. Génération de la date du jour
     const today = new Date();
     const datePublication = today.toISOString().split("T")[0];
 
-    // 3. Création du nouvel ID (le plus grand ID actuel + 1)
+    // 3. Création du nouvel ID
     const maxId = existingJobs.reduce((max, job) => Math.max(max, job.id), 0);
 
-    // 4. Création de l'objet de la nouvelle offre
+    // 4. Formatage automatique du salaire
+    let salaireSaisi = document.getElementById("salaire").value.trim();
+    if (!salaireSaisi.toLowerCase().includes("€")) {
+      salaireSaisi += " €/an";
+    }
+
+    // 5. Création de l'objet
     const newJob = {
       id: maxId + 1,
       titre: document.getElementById("titre").value,
       entreprise: document.getElementById("entreprise").value,
       secteur: document.getElementById("secteur").value,
       contrat: document.getElementById("contrat").value,
-      salaire: document.getElementById("salaire").value,
+      salaire: salaireSaisi, // Utilisation de la valeur formatée
       lieu: document.getElementById("lieu").value,
       teletravail: document.getElementById("teletravail").value,
       experience: document.getElementById("experience").value,
@@ -31,11 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
       datePublication: datePublication,
     };
 
-    // 5. Ajout et Sauvegarde
-    existingJobs.unshift(newJob); // unshift met l'offre au début du tableau (la plus récente)
+    // 6. Ajout et Sauvegarde
+    existingJobs.unshift(newJob);
     localStorage.setItem("capval_jobs", JSON.stringify(existingJobs));
 
-    // 6. UX : Message de succès et redirection
+    // 7. UX : Message de succès et redirection
     successMsg.classList.remove("hidden");
     form.querySelector('button[type="submit"]').disabled = true;
 
