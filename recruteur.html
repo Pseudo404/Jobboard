@@ -122,15 +122,18 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-2"
-              >Salaire *</label
+              >Fourchette de salaire (Brut Annuel) *</label
             >
             <input
               type="text"
               id="salaire"
-              placeholder="Ex: 35 000 €/an"
+              placeholder="Ex: 32 000 - 38 000 €/an"
               required
               class="w-full rounded-xl border border-slate-600 bg-slate-900 px-4 py-3 text-white focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
+            <p class="text-xs text-gray-500 mt-1">
+              Le comparateur utilisera la valeur la plus basse.
+            </p>
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-300 mb-2"
