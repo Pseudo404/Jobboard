@@ -1,41 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Jobboarding - Title App</title>
-</head>
-<body class="min-h-screen bg-gray-50 font-sans text-gray-900 antialiased">
-
-    <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur-md">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-            <ul class="flex items-center gap-3 sm:gap-6">
-                <li class="p-2">
-                    <a href="" class="text-sm font-semibold text-green-700 transition hover:text-green-900 sm:text-base">Trouver un job</a>
-                </li>
-                <li class="p-2">
-                    <a href="" class="text-sm font-medium text-gray-600 transition hover:text-green-700 sm:text-base">Accès recruteur</a>
-                </li>
-            </ul>
-            <ol class="flex items-center gap-2 sm:gap-4">
-                <li>
-                    <a href="" class="inline-flex items-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-700 shadow-sm transition hover:border-green-200 hover:bg-green-50 hover:text-green-700 sm:px-4">Se connecter</a>
-                </li>
-                <li>
-                    <a href="" class="inline-flex items-center rounded-xl bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-green-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:px-5">S'inscrire</a>
-                </li>
-            </ol>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Cap'Val - Le Pack Vie + Job</title>
+  </head>
+  <body class="min-h-screen bg-slate-900 font-sans text-gray-100 antialiased">
+    <!-- J'ai passé le body en dark mode (bg-slate-900) pour une touche plus moderne et tech -->
+    <header
+      class="sticky top-0 z-50 border-b border-slate-700 bg-slate-900/90 backdrop-blur-md"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+      >
+        <ul class="flex items-center gap-3 sm:gap-6">
+          <li class="p-2">
+            <a
+              href="#"
+              class="text-sm font-semibold text-blue-400 transition hover:text-blue-300 sm:text-base"
+              >Trouver un job</a
+            >
+          </li>
+          <li class="p-2">
+            <a
+              href="#"
+              class="text-sm font-medium text-gray-400 transition hover:text-gray-200 sm:text-base"
+              >Accès recruteur</a
+            >
+          </li>
+        </ul>
+        <ol class="flex items-center gap-2 sm:gap-4">
+          <li>
+            <a
+              href="#"
+              class="inline-flex items-center rounded-xl border border-slate-700 bg-slate-800 px-3 py-2 text-sm font-semibold text-gray-300 shadow-sm transition hover:bg-slate-700 sm:px-4"
+              >Se connecter</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="inline-flex items-center rounded-xl bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-500 sm:px-5"
+              >S'inscrire</a
+            >
+          </li>
+        </ol>
+      </nav>
     </header>
 
     <main class="mx-auto min-h-[70vh] max-w-7xl px-6 py-12 lg:px-8">
-        
+      <!-- Section 1 : Hero Header -->
+      <section class="flex flex-col items-center text-center py-20">
+        <span
+          class="rounded-full bg-blue-900/50 px-3 py-1 text-sm font-medium text-blue-400 mb-6 border border-blue-800"
+          >🚀 Hackathon Hussar Academy</span
+        >
+        <h1
+          class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl"
+        >
+          Ne choisissez plus entre <br /><span class="text-blue-500"
+            >un bon job et une belle vie.</span
+          >
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg text-gray-400">
+          Découvrez les meilleures opportunités en Centre-Val de Loire et
+          comparez instantanément votre futur reste à vivre face aux grandes
+          métropoles.
+        </p>
+        <div class="mt-10 flex gap-4 justify-center">
+          <a
+            href="#simulateur"
+            class="rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 transition"
+          >
+            Lancer le comparateur
+          </a>
+          <a
+            href="#jobs"
+            class="rounded-xl border border-slate-700 bg-slate-800 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-slate-700 transition"
+          >
+            Voir les offres
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 2 : La promesse -->
+      <section
+        class="grid grid-cols-1 md:grid-cols-2 gap-8 py-16 border-t border-slate-800"
+      >
+        <div class="rounded-2xl bg-slate-800/50 p-8 border border-slate-700">
+          <div
+            class="h-12 w-12 rounded-lg bg-blue-900/50 flex items-center justify-center mb-6 border border-blue-800"
+          >
+            <svg
+              class="h-6 w-6 text-blue-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+              />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-3">
+            Attirer les talents
+          </h2>
+          <p class="text-gray-400">
+            Vous venez d'une autre région ? Découvrez le pouvoir d'achat réel
+            qui vous attend ici. Loyer, transports, temps libre : comparez les
+            chiffres et prenez la bonne décision.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-slate-800/50 p-8 border border-slate-700">
+          <div
+            class="h-12 w-12 rounded-lg bg-blue-900/50 flex items-center justify-center mb-6 border border-blue-800"
+          >
+            <svg
+              class="h-6 w-6 text-blue-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+              />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold text-white mb-3">
+            Retenir les diplômés
+          </h2>
+          <p class="text-gray-400">
+            Déjà sur place ? Avant de partir vers de plus grandes villes,
+            importez une offre externe et comparez-la avec notre écosystème
+            local pour mesurer l'impact sur votre équilibre de vie.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3 : Le teasing du Jobboard -->
+      <section id="jobs" class="py-16 border-t border-slate-800">
+        <h2 class="text-3xl font-bold text-center text-white mb-12">
+          Dernières opportunités locales
+        </h2>
+        <!-- C'est ici que le JS va injecter les offres -->
+        <div
+          id="latest-jobs-container"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- Chargement initial -->
+          <p class="text-gray-500 text-center col-span-full">
+            Chargement des offres en cours...
+          </p>
+        </div>
+        <div class="mt-10 text-center">
+          <a
+            href="#"
+            class="text-blue-400 font-semibold hover:text-blue-300 transition"
+            >Voir toutes les offres &rarr;</a
+          >
+        </div>
+      </section>
     </main>
 
-    <footer class="border-t border-gray-200 bg-white">
-        <p class="text-center text-sm text-gray-500">&copy; 2026 Jobboarding. Tous droits réservés.</p>
+    <footer
+      class="border-t border-slate-800 bg-slate-900 py-8 text-center text-gray-500 text-sm"
+    >
+      Hackathon Hussar Academy - Projet Cap'Val
     </footer>
-</body>
-<script type="module" src="/assetes/js/main.js"></script>
+  </body>
+  <script type="module" src="./main.js"></script>
 </html>
