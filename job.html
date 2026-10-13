@@ -67,9 +67,9 @@
         >&larr; Retour aux offres</a
       >
 
-      <!-- Changement de la grille : on passe sur 12 colonnes pour un contrôle plus fin -->
+      <!-- Grille à 12 colonnes avec répartition 6 et 6 -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <!-- COLONNE GAUCHE (Détails) : prend 5 colonnes sur 12 -->
+        <!-- COLONNE GAUCHE (Détails) -->
         <div class="lg:col-span-6 space-y-6">
           <div
             class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-md"
@@ -92,10 +92,34 @@
             <h2 class="text-xl font-bold text-cvl-dark mb-4">
               Description du poste
             </h2>
-            <p
-              id="job-description"
-              class="text-gray-700 leading-relaxed mb-8"
-            ></p>
+
+            <!-- BLOC DESCRIPTION AVEC TRONCATURE ET BOUTON -->
+            <div class="mb-8">
+              <p
+                id="job-description"
+                class="text-gray-700 leading-relaxed line-clamp-4 transition-all duration-300"
+              ></p>
+              <button
+                id="btn-read-more"
+                onclick="toggleDescription()"
+                class="hidden mt-3 text-sm font-bold text-cvl-blue hover:text-cvl-dark transition focus:outline-none flex items-center gap-1"
+              >
+                Voir plus
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
 
             <h2 class="text-xl font-bold text-cvl-dark mb-4">Conditions</h2>
             <ul class="space-y-3 text-gray-600 mb-8">
@@ -133,7 +157,7 @@
           </div>
         </div>
 
-        <!-- COLONNE DROITE (Comparateur) : prend 7 colonnes sur 12 -->
+        <!-- COLONNE DROITE (Comparateur) -->
         <div class="lg:col-span-6 space-y-6">
           <div
             class="top-24 rounded-2xl bg-white p-6 border border-cvl-blue/10 shadow-md"
@@ -146,9 +170,8 @@
               l'offre, par rapport à Paris (+15% de salaire).
             </p>
 
-            <!-- Les deux cartes sont maintenant dans une grille côte à côte -->
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
-              <!-- Carte Région (Gauche) -->
+              <!-- Carte Région -->
               <div
                 class="bg-cvl-pale rounded-xl p-5 border border-cvl-blue/30 relative overflow-hidden"
               >
@@ -202,7 +225,7 @@
                 </div>
               </div>
 
-              <!-- Carte Paris (Droite) -->
+              <!-- Carte Paris -->
               <div
                 class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col justify-between"
               >
@@ -246,7 +269,7 @@
             </div>
           </div>
 
-          <!-- Bloc Avantages (Remonté juste en dessous du comparateur) -->
+          <!-- Bloc Avantages -->
           <div
             class="rounded-2xl bg-white p-6 border border-cvl-blue/10 shadow-md mt-6"
           >
@@ -254,7 +277,6 @@
               Vos avantages Quotidien
             </h3>
 
-            <!-- On passe les avantages en grille 2 colonnes pour compacter encore plus l'espace vertical -->
             <ul class="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <li class="flex items-start gap-3">
                 <div
@@ -326,12 +348,14 @@
         const desc = document.getElementById("job-description");
         const btn = document.getElementById("btn-read-more");
 
-        desc.classList.toggle("line-clamp-3");
+        desc.classList.toggle("line-clamp-4");
 
-        if (desc.classList.contains("line-clamp-3")) {
-          btn.textContent = "Voir plus";
+        if (desc.classList.contains("line-clamp-4")) {
+          btn.innerHTML =
+            'Voir plus <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
         } else {
-          btn.textContent = "Voir moins";
+          btn.innerHTML =
+            'Voir moins <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>';
         }
       }
 
@@ -341,10 +365,12 @@
 
         if (!desc || !btn) return;
 
-        const isLongText = desc.textContent.length > 200;
-        const isOverflowing = desc.scrollHeight > desc.clientHeight;
-
-        if (isLongText || isOverflowing) {
+        // La logique est fiabilisée : si la hauteur réelle dépasse la hauteur affichée, c'est qu'il y a troncature.
+        if (
+          desc.scrollHeight > desc.clientHeight ||
+          (!desc.classList.contains("line-clamp-4") &&
+            desc.textContent.length > 300)
+        ) {
           btn.classList.remove("hidden");
         } else {
           btn.classList.add("hidden");
@@ -363,8 +389,9 @@
         }
       });
 
-      const intervalId = setInterval(checkTextOverflow, 500);
-      setTimeout(() => clearInterval(intervalId), 4000);
+      // Lance la vérification immédiatement après le chargement des données
+      setTimeout(checkTextOverflow, 100);
+      setTimeout(checkTextOverflow, 500);
     </script>
   </body>
 </html>
