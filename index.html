@@ -10,12 +10,12 @@
           extend: {
             colors: {
               cvl: {
-                dark: "#29235C", // Bleu Nuit (Texte principal)
-                blue: "#009FE3", // Bleu Cyan (Boutons/Accents)
-                yellow: "#F5CE2E", // Jaune
-                green: "#13A538", // Vert
-                light: "#90D4F6", // Bleu Clair
-                pale: "#E6F5FC", // Cyan ultra-clair pour le fond de page
+                dark: "#29235C",
+                blue: "#009FE3",
+                yellow: "#F5CE2E",
+                green: "#13A538",
+                light: "#90D4F6",
+                pale: "#E6F5FC",
               },
             },
           },
@@ -24,9 +24,14 @@
     </script>
     <title>Cap'Val - Le Pack Vie + Job</title>
   </head>
-  <body class="min-h-screen bg-cvl-pale font-sans text-cvl-dark antialiased">
+
+  <!-- On retire les bordures du body et on ajoute flex flex-col pour structurer la page -->
+  <body
+    class="min-h-screen bg-cvl-pale font-sans text-cvl-dark antialiased flex flex-col"
+  >
+    <!-- Le header prend naturellement 100% de l'écran -->
     <header
-      class="sticky top-0 z-50 border-b border-cvl-blue/10 bg-white/90 backdrop-blur-md shadow-sm"
+      class="sticky top-0 z-50 border-b border-cvl-blue/10 bg-white/90 backdrop-blur-md shadow-sm w-full"
     >
       <nav
         class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
@@ -73,233 +78,246 @@
       </nav>
     </header>
 
-    <main class="mx-auto min-h-[70vh] max-w-7xl px-6 py-12 lg:px-8">
-      <section class="flex flex-col items-center text-center py-20">
-        <span
-          class="rounded-full bg-cvl-yellow/20 px-4 py-1.5 text-sm font-bold text-cvl-dark mb-6 border border-cvl-yellow"
-          >🚀 Hackathon Hussar Academy</span
-        >
-        <h1
-          class="text-4xl font-extrabold tracking-tight text-cvl-dark sm:text-6xl leading-tight"
-        >
-          Ne choisissez plus entre <br /><span class="text-cvl-blue"
-            >un bon job et une belle vie.</span
+    <!-- Le Wrapper qui contient les bandes vertes et s'étire sur tout l'espace disponible (flex-grow) -->
+    <div
+      class="flex-grow border-x-[16px] sm:border-x-[32px] lg:border-x-[80px] border-cvl-green"
+    >
+      <main class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <section class="flex flex-col items-center text-center py-20">
+          <span
+            class="rounded-full bg-cvl-yellow/20 px-4 py-1.5 text-sm font-bold text-cvl-dark mb-6 border border-cvl-yellow"
+            >🚀 Hackathon Hussar Academy</span
           >
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg text-gray-600">
-          Découvrez les meilleures opportunités en
-          <strong class="text-cvl-dark">Centre-Val de Loire</strong> et comparez
-          instantanément votre futur reste à vivre face aux grandes métropoles.
-        </p>
-        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#simulateur"
-            class="rounded-xl bg-cvl-blue px-8 py-4 text-base font-bold text-white shadow-lg shadow-cvl-blue/30 hover:bg-cvl-dark transition duration-300"
-            >Lancer le comparateur</a
+          <h1
+            class="text-4xl font-extrabold tracking-tight text-cvl-dark sm:text-6xl leading-tight"
           >
-          <a
-            href="jobs.html"
-            class="rounded-xl border border-cvl-blue/20 bg-white px-8 py-4 text-base font-bold text-cvl-dark shadow-sm hover:bg-cvl-pale transition duration-300"
-            >Voir les offres</a
-          >
-        </div>
-      </section>
-
-      <section
-        class="grid grid-cols-1 md:grid-cols-2 gap-8 py-16 border-t border-cvl-blue/10"
-      >
-        <div
-          class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-lg"
-        >
-          <div
-            class="h-12 w-12 rounded-lg bg-cvl-yellow/20 flex items-center justify-center mb-6 border border-cvl-yellow/50"
-          >
-            <svg
-              class="h-6 w-6 text-cvl-dark"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            Ne choisissez plus entre <br /><span class="text-cvl-blue"
+              >un bon job et une belle vie.</span
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-              />
-            </svg>
-          </div>
-          <h2 class="text-2xl font-bold text-cvl-dark mb-3">
-            Attirer les talents
-          </h2>
-          <p class="text-gray-600 leading-relaxed">
-            Vous venez d'une autre région ? Découvrez le pouvoir d'achat réel
-            qui vous attend ici. Loyer, transports, temps libre : comparez les
-            chiffres et prenez la bonne décision.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg text-gray-600">
+            Découvrez les meilleures opportunités en
+            <strong class="text-cvl-dark">Centre-Val de Loire</strong> et
+            comparez instantanément votre futur reste à vivre face aux grandes
+            métropoles.
           </p>
-        </div>
-        <div
-          class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-lg"
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#simulateur"
+              class="rounded-xl bg-cvl-blue px-8 py-4 text-base font-bold text-white shadow-lg shadow-cvl-blue/30 hover:bg-cvl-dark transition duration-300"
+              >Lancer le comparateur</a
+            >
+            <a
+              href="jobs.html"
+              class="rounded-xl border border-cvl-blue/20 bg-white px-8 py-4 text-base font-bold text-cvl-dark shadow-sm hover:bg-cvl-pale transition duration-300"
+              >Voir les offres</a
+            >
+          </div>
+        </section>
+
+        <section
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 py-16 border-t border-cvl-blue/10"
         >
           <div
-            class="h-12 w-12 rounded-lg bg-cvl-light/30 flex items-center justify-center mb-6 border border-cvl-blue/30"
+            class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-lg"
           >
-            <svg
-              class="h-6 w-6 text-cvl-blue"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
-              />
-            </svg>
-          </div>
-          <h2 class="text-2xl font-bold text-cvl-dark mb-3">
-            Retenir les diplômés
-          </h2>
-          <p class="text-gray-600 leading-relaxed">
-            Déjà sur place ? Avant de partir vers de plus grandes villes,
-            importez une offre externe et comparez-la avec notre écosystème
-            local pour mesurer l'impact sur votre équilibre de vie.
-          </p>
-        </div>
-      </section>
-
-      <section id="simulateur" class="py-16 border-t border-cvl-blue/10">
-        <div class="text-center mb-10">
-          <h2 class="text-3xl font-bold text-cvl-dark mb-4">
-            Calculez votre vrai pouvoir d'achat
-          </h2>
-          <p class="text-gray-600">
-            Entrez un salaire brut annuel pour comparer le reste à vivre après
-            le loyer (pour 40m²) et les transports.
-          </p>
-        </div>
-
-        <div class="max-w-xl mx-auto mb-12">
-          <label
-            for="salaryInput"
-            class="block text-sm font-bold text-cvl-dark mb-2"
-            >Salaire Brut Annuel (€)</label
-          >
-          <input
-            type="number"
-            id="salaryInput"
-            value="35000"
-            class="w-full rounded-xl border border-cvl-blue/20 bg-white px-4 py-3 text-cvl-dark font-bold focus:border-cvl-blue focus:outline-none focus:ring-2 focus:ring-cvl-blue transition shadow-sm"
-          />
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <!-- Carte Paris -->
-          <div
-            class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-md"
-          >
-            <h3 class="text-xl font-bold text-gray-500 mb-6 text-center">
-              Paris / IDF
-            </h3>
-            <ul class="space-y-4 text-sm text-gray-600 mb-6">
-              <li class="flex justify-between">
-                <span>Salaire Net Mensuel</span>
-                <span id="paris-net" class="font-bold text-cvl-dark">...</span>
-              </li>
-              <li class="flex justify-between">
-                <span>Loyer (40m² à 26€/m²)</span>
-                <span class="text-red-500 font-medium">- 1 040 €</span>
-              </li>
-              <li class="flex justify-between">
-                <span>Transport (Navigo)</span>
-                <span class="text-red-500 font-medium">- 91 €</span>
-              </li>
-            </ul>
             <div
-              class="border-t border-gray-200 pt-4 flex justify-between items-center"
+              class="h-12 w-12 rounded-lg bg-cvl-yellow/20 flex items-center justify-center mb-6 border border-cvl-yellow/50"
             >
-              <span class="text-lg font-bold text-gray-500">Reste à vivre</span>
-              <span id="paris-reste" class="text-2xl font-black text-cvl-dark"
-                >...</span
+              <svg
+                class="h-6 w-6 text-cvl-dark"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                />
+              </svg>
             </div>
+            <h2 class="text-2xl font-bold text-cvl-dark mb-3">
+              Attirer les talents
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              Vous venez d'une autre région ? Découvrez le pouvoir d'achat réel
+              qui vous attend ici. Loyer, transports, temps libre : comparez les
+              chiffres et prenez la bonne décision.
+            </p>
           </div>
-
-          <!-- Carte Région -->
           <div
-            class="rounded-2xl bg-white p-8 border-2 border-cvl-blue shadow-[0_0_20px_rgba(0,159,227,0.15)] relative overflow-hidden"
+            class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-lg"
           >
             <div
-              class="absolute top-0 right-0 bg-cvl-yellow text-cvl-dark text-xs font-bold px-3 py-1 rounded-bl-lg"
+              class="h-12 w-12 rounded-lg bg-cvl-light/30 flex items-center justify-center mb-6 border border-cvl-blue/30"
             >
-              Notre Région
-            </div>
-            <h3 class="text-xl font-bold text-cvl-blue mb-6 text-center">
-              Centre-Val de Loire
-            </h3>
-            <ul class="space-y-4 text-sm text-cvl-dark mb-6">
-              <li class="flex justify-between">
-                <span>Salaire Net Mensuel</span>
-                <span id="orleans-net" class="font-bold">...</span>
-              </li>
-              <li class="flex justify-between">
-                <span>Loyer (Moyenne 40m²)</span>
-                <span class="text-orange-500 font-medium">- 480 €</span>
-              </li>
-              <li class="flex justify-between">
-                <span>Transport local</span>
-                <span class="text-orange-500 font-medium">- 52 €</span>
-              </li>
-            </ul>
-            <div
-              class="border-t border-cvl-blue/20 pt-4 flex justify-between items-center"
-            >
-              <span class="text-lg font-bold text-cvl-dark">Reste à vivre</span>
-              <span
-                id="orleans-reste"
-                class="text-3xl font-black text-cvl-green"
-                >...</span
+              <svg
+                class="h-6 w-6 text-cvl-blue"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+                />
+              </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-cvl-dark mb-3">
+              Retenir les diplômés
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              Déjà sur place ? Avant de partir vers de plus grandes villes,
+              importez une offre externe et comparez-la avec notre écosystème
+              local pour mesurer l'impact sur votre équilibre de vie.
+            </p>
+          </div>
+        </section>
+
+        <section id="simulateur" class="py-16 border-t border-cvl-blue/10">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-cvl-dark mb-4">
+              Calculez votre vrai pouvoir d'achat
+            </h2>
+            <p class="text-gray-600">
+              Entrez un salaire brut annuel pour comparer le reste à vivre après
+              le loyer (pour 40m²) et les transports.
+            </p>
+          </div>
+
+          <div class="max-w-xl mx-auto mb-12">
+            <label
+              for="salaryInput"
+              class="block text-sm font-bold text-cvl-dark mb-2"
+              >Salaire Brut Annuel (€)</label
+            >
+            <input
+              type="number"
+              id="salaryInput"
+              value="35000"
+              class="w-full rounded-xl border border-cvl-blue/20 bg-white px-4 py-3 text-cvl-dark font-bold focus:border-cvl-blue focus:outline-none focus:ring-2 focus:ring-cvl-blue transition shadow-sm"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div
+              class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-md"
+            >
+              <h3 class="text-xl font-bold text-gray-500 mb-6 text-center">
+                Paris / IDF
+              </h3>
+              <ul class="space-y-4 text-sm text-gray-600 mb-6">
+                <li class="flex justify-between">
+                  <span>Salaire Net Mensuel</span>
+                  <span id="paris-net" class="font-bold text-cvl-dark"
+                    >...</span
+                  >
+                </li>
+                <li class="flex justify-between">
+                  <span>Loyer (40m² à 26€/m²)</span>
+                  <span class="text-red-500 font-medium">- 1 040 €</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Transport (Navigo)</span>
+                  <span class="text-red-500 font-medium">- 91 €</span>
+                </li>
+              </ul>
+              <div
+                class="border-t border-gray-200 pt-4 flex justify-between items-center"
+              >
+                <span class="text-lg font-bold text-gray-500"
+                  >Reste à vivre</span
+                >
+                <span id="paris-reste" class="text-2xl font-black text-cvl-dark"
+                  >...</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="rounded-2xl bg-white p-8 border-2 border-cvl-blue shadow-[0_0_20px_rgba(0,159,227,0.15)] relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 bg-cvl-yellow text-cvl-dark text-xs font-bold px-3 py-1 rounded-bl-lg"
+              >
+                Notre Région
+              </div>
+              <h3 class="text-xl font-bold text-cvl-blue mb-6 text-center">
+                Centre-Val de Loire
+              </h3>
+              <ul class="space-y-4 text-sm text-cvl-dark mb-6">
+                <li class="flex justify-between">
+                  <span>Salaire Net Mensuel</span>
+                  <span id="orleans-net" class="font-bold">...</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Loyer (Moyenne 40m²)</span>
+                  <span class="text-orange-500 font-medium">- 480 €</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>Transport local</span>
+                  <span class="text-orange-500 font-medium">- 52 €</span>
+                </li>
+              </ul>
+              <div
+                class="border-t border-cvl-blue/20 pt-4 flex justify-between items-center"
+              >
+                <span class="text-lg font-bold text-cvl-dark"
+                  >Reste à vivre</span
+                >
+                <span
+                  id="orleans-reste"
+                  class="text-3xl font-black text-cvl-green"
+                  >...</span
+                >
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="jobs" class="py-16 border-t border-cvl-blue/10">
-        <h2 class="text-3xl font-bold text-center text-cvl-dark mb-12">
-          Dernières opportunités locales
-        </h2>
-        <div
-          id="latest-jobs-container"
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        ></div>
-        <div class="mt-12 text-center">
-          <a
-            href="jobs.html"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-cvl-blue font-bold hover:bg-cvl-pale transition duration-300 border border-cvl-blue/20 shadow-sm"
-          >
-            Voir toutes les offres
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        <section id="jobs" class="py-16 border-t border-cvl-blue/10">
+          <h2 class="text-3xl font-bold text-center text-cvl-dark mb-12">
+            Dernières opportunités locales
+          </h2>
+          <div
+            id="latest-jobs-container"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          ></div>
+          <div class="mt-12 text-center">
+            <a
+              href="jobs.html"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-cvl-blue font-bold hover:bg-cvl-pale transition duration-300 border border-cvl-blue/20 shadow-sm"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </section>
-    </main>
+              Voir toutes les offres
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!-- Fin du Wrapper avec bordures -->
 
-    <footer class="bg-cvl-dark py-8 text-center text-white text-sm">
+    <!-- Le footer prend naturellement 100% de l'écran -->
+    <footer class="bg-cvl-dark py-8 text-center text-white text-sm w-full">
       <p>Hackathon Hussar Academy - Projet Cap'Val</p>
     </footer>
+
     <script type="module" src="./main.js"></script>
   </body>
 </html>
