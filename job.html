@@ -4,11 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cvl: {
+                dark: "#29235C",
+                blue: "#009FE3",
+                yellow: "#F5CE2E",
+                green: "#13A538",
+                light: "#90D4F6",
+                pale: "#E6F5FC",
+              },
+            },
+          },
+        },
+      };
+    </script>
     <title>Détails de l'offre - Cap'Val</title>
   </head>
-  <body class="min-h-screen bg-slate-900 font-sans text-gray-100 antialiased">
+  <body class="min-h-screen bg-cvl-pale font-sans text-cvl-dark antialiased">
     <header
-      class="sticky top-0 z-50 border-b border-slate-700 bg-slate-900/90 backdrop-blur-md"
+      class="sticky top-0 z-50 border-b border-cvl-blue/10 bg-white/90 backdrop-blur-md shadow-sm"
     >
       <nav
         class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
@@ -17,21 +35,21 @@
           <li class="p-2">
             <a
               href="index.html"
-              class="text-sm font-semibold text-blue-400 transition hover:text-blue-300 sm:text-base"
+              class="text-sm font-medium text-gray-600 hover:text-cvl-blue transition"
               >Accueil</a
             >
           </li>
           <li class="p-2">
             <a
               href="jobs.html"
-              class="text-sm font-semibold text-gray-300 transition hover:text-blue-400 sm:text-base"
+              class="text-sm font-medium text-gray-600 transition hover:text-cvl-blue sm:text-base"
               >Toutes les offres</a
             >
           </li>
           <li class="p-2">
             <a
               href="recruteur.html"
-              class="text-sm font-medium text-gray-400 transition hover:text-gray-200 sm:text-base"
+              class="text-sm font-medium text-gray-600 transition hover:text-cvl-blue sm:text-base"
               >Accès recruteur</a
             >
           </li>
@@ -45,228 +63,224 @@
     >
       <a
         href="jobs.html"
-        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white mb-8 transition"
+        class="inline-flex items-center text-sm font-bold text-cvl-blue hover:text-cvl-dark mb-8 transition"
+        >&larr; Retour aux offres</a
       >
-        &larr; Retour aux offres
-      </a>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- COLONNE GAUCHE : Détails de l'offre -->
         <div class="lg:col-span-2 space-y-6">
           <div
-            class="rounded-2xl bg-slate-800 p-8 border border-slate-700 shadow-lg"
+            class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-md"
           >
             <div
               class="flex flex-wrap items-center gap-3 mb-6"
               id="job-tags"
             ></div>
-
             <h1
               id="job-title"
-              class="text-3xl sm:text-4xl font-extrabold text-white mb-2"
+              class="text-3xl sm:text-4xl font-extrabold text-cvl-dark mb-2"
             >
               Chargement...
             </h1>
             <p
               id="job-company-location"
-              class="text-lg font-medium text-blue-400 mb-8"
+              class="text-lg font-bold text-cvl-blue mb-8"
             ></p>
 
-            <h2 class="text-xl font-bold text-white mb-4">
+            <h2 class="text-xl font-bold text-cvl-dark mb-4">
               Description du poste
             </h2>
             <p
               id="job-description"
-              class="text-gray-300 leading-relaxed mb-8"
+              class="text-gray-700 leading-relaxed mb-8"
             ></p>
 
-            <h2 class="text-xl font-bold text-white mb-4">Conditions</h2>
-            <ul class="space-y-3 text-gray-300 mb-8">
+            <h2 class="text-xl font-bold text-cvl-dark mb-4">Conditions</h2>
+            <ul class="space-y-3 text-gray-600 mb-8">
               <li class="flex items-center gap-2">
-                <span class="font-semibold text-gray-400">Salaire :</span>
-                <span id="job-salary"></span>
+                <span class="font-bold text-cvl-dark">Salaire :</span>
+                <span id="job-salary" class="text-cvl-blue font-bold"></span>
               </li>
               <li class="flex items-center gap-2">
-                <span class="font-semibold text-gray-400">Contrat :</span>
+                <span class="font-bold text-cvl-dark">Contrat :</span>
                 <span id="job-contract"></span>
               </li>
               <li class="flex items-center gap-2">
-                <span class="font-semibold text-gray-400">Télétravail :</span>
+                <span class="font-bold text-cvl-dark">Télétravail :</span>
                 <span id="job-remote"></span>
               </li>
               <li class="flex items-center gap-2">
-                <span class="font-semibold text-gray-400">Expérience :</span>
+                <span class="font-bold text-cvl-dark">Expérience :</span>
                 <span id="job-exp"></span>
               </li>
             </ul>
 
-            <h2 class="text-xl font-bold text-white mb-4 mt-8">
+            <h2 class="text-xl font-bold text-cvl-dark mb-4 mt-8">
               Évolution de carrière (2 à 5 ans)
             </h2>
             <p
               id="job-evolution"
-              class="text-blue-300 font-medium leading-relaxed bg-blue-900/20 p-4 rounded-xl border border-blue-800/50 mb-8"
+              class="text-cvl-dark font-medium leading-relaxed bg-cvl-pale p-4 rounded-xl border border-cvl-blue/20 mb-8"
             ></p>
 
             <button
-              class="w-full sm:w-auto rounded-xl bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-sm hover:bg-blue-500 transition"
+              class="w-full sm:w-auto rounded-xl bg-cvl-blue px-8 py-4 text-lg font-bold text-white shadow-md hover:bg-cvl-dark transition"
             >
               Postuler maintenant
             </button>
           </div>
         </div>
 
-        <!-- COLONNE DROITE : Comparateur Dynamique -->
         <div class="lg:col-span-1 space-y-6">
-          <!-- Brique 1 : Financière -->
           <div
-            class="top-24 rounded-2xl bg-blue-900/20 p-6 border border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.15)]"
+            class="top-24 rounded-2xl bg-white p-6 border border-cvl-blue/10 shadow-md"
           >
-            <h3 class="text-xl font-bold text-white mb-2">
+            <h3 class="text-xl font-bold text-cvl-dark mb-2">
               Votre Pack Vie + Job
             </h3>
-            <p class="text-sm text-gray-400 mb-6">
+            <p class="text-sm text-gray-500 mb-6">
               Comparaison de votre reste à vivre estimé selon la ville de
               l'offre, par rapport à Paris (+15% de salaire).
             </p>
 
-            <!-- Carte Locale Dynamique -->
             <div
-              class="bg-slate-800 rounded-xl p-5 mb-4 border border-blue-800/50"
+              class="bg-cvl-pale rounded-xl p-5 mb-4 border border-cvl-blue/30 relative overflow-hidden"
             >
-              <h4 class="font-bold text-blue-400 mb-4 text-center">
+              <div
+                class="absolute top-0 right-0 bg-cvl-yellow text-cvl-dark text-[10px] font-bold px-2 py-0.5 rounded-bl-lg"
+              >
+                Région
+              </div>
+              <h4 class="font-bold text-cvl-blue mb-4 text-center">
                 En travaillant à <span id="local-city-title">...</span>
               </h4>
-              <ul class="space-y-2 text-sm text-gray-300 mb-4">
+              <ul class="space-y-2 text-sm text-cvl-dark mb-4">
                 <li class="flex justify-between">
                   <span>Salaire Net Mensuel</span>
-                  <span id="local-net" class="font-medium text-white">...</span>
+                  <span id="local-net" class="font-bold">...</span>
                 </li>
                 <li class="flex justify-between">
                   <span>Loyer (<span id="local-rent-m2"></span>€/m²)</span>
-                  <span id="local-rent-cost" class="text-orange-300">...</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Transport local</span>
-                  <span id="local-transport-cost" class="text-orange-300"
+                  <span id="local-rent-cost" class="text-orange-600 font-medium"
                     >...</span
                   >
                 </li>
                 <li class="flex justify-between">
-                  <span>Courses (Moyenne)</span>
-                  <span id="local-food-cost" class="text-orange-300">...</span>
+                  <span>Transport local</span>
+                  <span
+                    id="local-transport-cost"
+                    class="text-orange-600 font-medium"
+                    >...</span
+                  >
+                </li>
+                <li class="flex justify-between">
+                  <span>Courses</span>
+                  <span id="local-food-cost" class="text-orange-600 font-medium"
+                    >...</span
+                  >
                 </li>
               </ul>
               <div
-                class="border-t border-slate-700 pt-3 flex justify-between items-center"
+                class="border-t border-cvl-blue/20 pt-3 flex justify-between items-center"
               >
-                <span class="font-bold text-white">Reste à vivre</span>
-                <span
-                  id="local-reste"
-                  class="text-xl font-black text-emerald-400"
+                <span class="font-bold text-cvl-dark">Reste à vivre</span>
+                <span id="local-reste" class="text-xl font-black text-cvl-green"
                   >...</span
                 >
               </div>
             </div>
 
-            <!-- Carte Paris avec augmentation de 15% -->
-            <div
-              class="bg-slate-800/50 rounded-xl p-5 border border-slate-700 opacity-75"
-            >
-              <h4 class="font-bold text-gray-400 mb-4 text-center">
+            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">
+              <h4 class="font-bold text-gray-500 mb-4 text-center">
                 Le même poste à Paris
-                <span class="text-xs text-blue-400">(+15%)</span>
+                <span class="text-xs text-cvl-blue">(+15%)</span>
               </h4>
-              <ul class="space-y-2 text-sm text-gray-400 mb-4">
+              <ul class="space-y-2 text-sm text-gray-500 mb-4">
                 <li class="flex justify-between">
                   <span>Salaire Net Mensuel</span>
-                  <span id="paris-net" class="font-medium text-blue-300"
+                  <span id="paris-net" class="font-bold text-gray-700"
                     >...</span
                   >
                 </li>
                 <li class="flex justify-between">
                   <span>Loyer (40m² à 26€/m²)</span>
-                  <span class="text-red-400/80">- 1 040 €</span>
+                  <span class="text-red-500">- 1 040 €</span>
                 </li>
                 <li class="flex justify-between">
                   <span>Transport (Navigo)</span>
-                  <span class="text-red-400/80">- 91 €</span>
+                  <span class="text-red-500">- 91 €</span>
                 </li>
                 <li class="flex justify-between">
-                  <span>Courses (Moyenne)</span>
-                  <span class="text-red-400/80">- 350 €</span>
+                  <span>Courses</span> <span class="text-red-500">- 350 €</span>
                 </li>
               </ul>
               <div
-                class="border-t border-slate-700 pt-3 flex justify-between items-center"
+                class="border-t border-gray-200 pt-3 flex justify-between items-center"
               >
-                <span class="font-bold text-gray-300">Reste à vivre</span>
-                <span id="paris-reste" class="text-lg font-black text-white"
+                <span class="font-bold text-gray-600">Reste à vivre</span>
+                <span id="paris-reste" class="text-lg font-black text-gray-800"
                   >...</span
                 >
               </div>
             </div>
           </div>
 
-          <!-- Brique 2 : Qualité de vie -->
           <div
-            class="rounded-2xl bg-slate-800 p-6 border border-slate-700 shadow-lg mt-6"
+            class="rounded-2xl bg-white p-6 border border-cvl-blue/10 shadow-md mt-6"
           >
-            <h3 class="text-lg font-bold text-white mb-4">
+            <h3 class="text-lg font-bold text-cvl-dark mb-4">
               Vos avantages Quotidien
             </h3>
             <ul class="space-y-4">
-              <!-- Facteur 1 : Temps de Trajet -->
               <li class="flex items-start gap-3">
-                <div class="mt-1 bg-emerald-500/20 p-2 rounded-lg">
-                  <span class="text-emerald-400 text-lg">⏱️</span>
+                <div
+                  class="mt-1 bg-cvl-green/10 p-2 rounded-lg border border-cvl-green/20"
+                >
+                  <span class="text-cvl-green text-lg">⏱️</span>
                 </div>
                 <div>
-                  <p class="font-bold text-gray-200">
+                  <p class="font-bold text-cvl-dark">
                     Temps de trajet (Bouchons)
                   </p>
-                  <p class="text-sm text-gray-400">
-                    <span
-                      id="local-time-gain"
-                      class="font-bold text-emerald-300"
+                  <p class="text-sm text-gray-600">
+                    <span id="local-time-gain" class="font-bold text-cvl-green"
                       >...</span
                     >
-                    gagnées par an. (<span id="local-traffic"></span> perdues
-                    aux heures de pointe vs 101h à Paris).
+                    gagnées par an. (<span id="local-traffic"></span> perdues vs
+                    101h à Paris).
                   </p>
                 </div>
               </li>
-
-              <!-- Facteur 2 : Espaces verts -->
               <li class="flex items-start gap-3">
-                <div class="mt-1 bg-green-500/20 p-2 rounded-lg">
-                  <span class="text-green-400 text-lg">🌳</span>
+                <div
+                  class="mt-1 bg-cvl-green/10 p-2 rounded-lg border border-cvl-green/20"
+                >
+                  <span class="text-cvl-green text-lg">🌳</span>
                 </div>
                 <div>
-                  <p class="font-bold text-gray-200">Accès à la Nature</p>
-                  <p class="text-sm text-gray-400">
+                  <p class="font-bold text-cvl-dark">Accès à la Nature</p>
+                  <p class="text-sm text-gray-600">
                     Environ
                     <span
                       id="local-green-space"
-                      class="font-bold text-green-300"
+                      class="font-bold text-cvl-green"
                       >...</span
                     >
-                    d'espaces verts par habitant (Contre un étouffant 5,8 m² à
-                    Paris).
+                    d'espaces verts par habitant (Contre 5,8 m² à Paris).
                   </p>
                 </div>
               </li>
-
-              <!-- Facteur 3 : Espace de vie -->
               <li class="flex items-start gap-3">
-                <div class="mt-1 bg-blue-500/20 p-2 rounded-lg">
-                  <span class="text-blue-400 text-lg">🏠</span>
+                <div
+                  class="mt-1 bg-cvl-pale p-2 rounded-lg border border-cvl-blue/20"
+                >
+                  <span class="text-cvl-blue text-lg">🏠</span>
                 </div>
                 <div>
-                  <p class="font-bold text-gray-200">Gain d'espace</p>
-                  <p class="text-sm text-gray-400">
+                  <p class="font-bold text-cvl-dark">Gain d'espace</p>
+                  <p class="text-sm text-gray-600">
                     Pour le prix d'un T2 (40m²) parisien, louez
-                    <span id="local-space-gain" class="text-blue-300 font-bold"
+                    <span id="local-space-gain" class="text-cvl-blue font-bold"
                       >...</span
                     >
                     en région.
@@ -278,9 +292,7 @@
         </div>
       </div>
     </main>
-    <footer
-      class="border-t border-slate-800 bg-slate-900 py-8 text-center text-gray-500 text-sm mt-12"
-    >
+    <footer class="bg-cvl-dark py-8 text-center text-white text-sm mt-12">
       Hackathon Hussar Academy - Projet Cap'Val
     </footer>
     <script type="module" src="./job.js"></script>
