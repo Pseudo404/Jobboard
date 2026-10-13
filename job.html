@@ -67,8 +67,10 @@
         >&larr; Retour aux offres</a
       >
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 space-y-6">
+      <!-- Changement de la grille : on passe sur 12 colonnes pour un contrôle plus fin -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- COLONNE GAUCHE (Détails) : prend 5 colonnes sur 12 -->
+        <div class="lg:col-span-6 space-y-6">
           <div
             class="rounded-2xl bg-white p-8 border border-cvl-blue/10 shadow-md"
           >
@@ -131,7 +133,8 @@
           </div>
         </div>
 
-        <div class="lg:col-span-1 space-y-6">
+        <!-- COLONNE DROITE (Comparateur) : prend 7 colonnes sur 12 -->
+        <div class="lg:col-span-6 space-y-6">
           <div
             class="top-24 rounded-2xl bg-white p-6 border border-cvl-blue/10 shadow-md"
           >
@@ -143,124 +146,143 @@
               l'offre, par rapport à Paris (+15% de salaire).
             </p>
 
-            <div
-              class="bg-cvl-pale rounded-xl p-5 mb-4 border border-cvl-blue/30 relative overflow-hidden"
-            >
+            <!-- Les deux cartes sont maintenant dans une grille côte à côte -->
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+              <!-- Carte Région (Gauche) -->
               <div
-                class="absolute top-0 right-0 bg-cvl-yellow text-cvl-dark text-[10px] font-bold px-2 py-0.5 rounded-bl-lg"
+                class="bg-cvl-pale rounded-xl p-5 border border-cvl-blue/30 relative overflow-hidden"
               >
-                Région
-              </div>
-              <h4 class="font-bold text-cvl-blue mb-4 text-center">
-                En travaillant à <span id="local-city-title">...</span>
-              </h4>
-              <ul class="space-y-2 text-sm text-cvl-dark mb-4">
-                <li class="flex justify-between">
-                  <span>Salaire Net Mensuel</span>
-                  <span id="local-net" class="font-bold">...</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Loyer (<span id="local-rent-m2"></span>€/m²)</span>
-                  <span id="local-rent-cost" class="text-orange-600 font-medium"
-                    >...</span
-                  >
-                </li>
-                <li class="flex justify-between">
-                  <span>Transport local</span>
+                <div
+                  class="absolute top-0 right-0 bg-cvl-yellow text-cvl-dark text-[10px] font-bold px-2 py-0.5 rounded-bl-lg"
+                >
+                  Région
+                </div>
+                <h4 class="font-bold text-cvl-blue mb-4 text-center">
+                  En travaillant à <span id="local-city-title">...</span>
+                </h4>
+                <ul class="space-y-2 text-sm text-cvl-dark mb-4">
+                  <li class="flex justify-between">
+                    <span>Salaire Net Mensuel</span>
+                    <span id="local-net" class="font-bold">...</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Loyer (<span id="local-rent-m2"></span>€/m²)</span>
+                    <span
+                      id="local-rent-cost"
+                      class="text-orange-600 font-medium"
+                      >...</span
+                    >
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Transport local</span>
+                    <span
+                      id="local-transport-cost"
+                      class="text-orange-600 font-medium"
+                      >...</span
+                    >
+                  </li>
+                  <li class="flex justify-between">
+                    <span>Courses</span>
+                    <span
+                      id="local-food-cost"
+                      class="text-orange-600 font-medium"
+                      >...</span
+                    >
+                  </li>
+                </ul>
+                <div
+                  class="border-t border-cvl-blue/20 pt-3 flex justify-between items-center"
+                >
+                  <span class="font-bold text-cvl-dark">Reste à vivre</span>
                   <span
-                    id="local-transport-cost"
-                    class="text-orange-600 font-medium"
+                    id="local-reste"
+                    class="text-xl font-black text-cvl-green"
                     >...</span
                   >
-                </li>
-                <li class="flex justify-between">
-                  <span>Courses</span>
-                  <span id="local-food-cost" class="text-orange-600 font-medium"
-                    >...</span
-                  >
-                </li>
-              </ul>
-              <div
-                class="border-t border-cvl-blue/20 pt-3 flex justify-between items-center"
-              >
-                <span class="font-bold text-cvl-dark">Reste à vivre</span>
-                <span id="local-reste" class="text-xl font-black text-cvl-green"
-                  >...</span
-                >
+                </div>
               </div>
-            </div>
 
-            <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">
-              <h4 class="font-bold text-gray-500 mb-4 text-center">
-                Le même poste à Paris
-                <span class="text-xs text-cvl-blue">(+15%)</span>
-              </h4>
-              <ul class="space-y-2 text-sm text-gray-500 mb-4">
-                <li class="flex justify-between">
-                  <span>Salaire Net Mensuel</span>
-                  <span id="paris-net" class="font-bold text-gray-700"
+              <!-- Carte Paris (Droite) -->
+              <div
+                class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col justify-between"
+              >
+                <div>
+                  <h4 class="font-bold text-gray-500 mb-4 text-center">
+                    Le même poste à Paris
+                    <span class="text-xs text-cvl-blue">(+15%)</span>
+                  </h4>
+                  <ul class="space-y-2 text-sm text-gray-500 mb-4">
+                    <li class="flex justify-between">
+                      <span>Salaire Net Mensuel</span>
+                      <span id="paris-net" class="font-bold text-gray-700"
+                        >...</span
+                      >
+                    </li>
+                    <li class="flex justify-between">
+                      <span>Loyer (40m² à 26€/m²)</span>
+                      <span class="text-red-500">- 1 040 €</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>Transport (Navigo)</span>
+                      <span class="text-red-500">- 91 €</span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span>Courses</span>
+                      <span class="text-red-500">- 350 €</span>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="border-t border-gray-200 pt-3 flex justify-between items-center mt-auto"
+                >
+                  <span class="font-bold text-gray-600">Reste à vivre</span>
+                  <span
+                    id="paris-reste"
+                    class="text-lg font-black text-gray-800"
                     >...</span
                   >
-                </li>
-                <li class="flex justify-between">
-                  <span>Loyer (40m² à 26€/m²)</span>
-                  <span class="text-red-500">- 1 040 €</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Transport (Navigo)</span>
-                  <span class="text-red-500">- 91 €</span>
-                </li>
-                <li class="flex justify-between">
-                  <span>Courses</span> <span class="text-red-500">- 350 €</span>
-                </li>
-              </ul>
-              <div
-                class="border-t border-gray-200 pt-3 flex justify-between items-center"
-              >
-                <span class="font-bold text-gray-600">Reste à vivre</span>
-                <span id="paris-reste" class="text-lg font-black text-gray-800"
-                  >...</span
-                >
+                </div>
               </div>
             </div>
           </div>
 
+          <!-- Bloc Avantages (Remonté juste en dessous du comparateur) -->
           <div
             class="rounded-2xl bg-white p-6 border border-cvl-blue/10 shadow-md mt-6"
           >
             <h3 class="text-lg font-bold text-cvl-dark mb-4">
               Vos avantages Quotidien
             </h3>
-            <ul class="space-y-4">
+
+            <!-- On passe les avantages en grille 2 colonnes pour compacter encore plus l'espace vertical -->
+            <ul class="grid grid-cols-1 xl:grid-cols-2 gap-6">
               <li class="flex items-start gap-3">
                 <div
-                  class="mt-1 bg-cvl-green/10 p-2 rounded-lg border border-cvl-green/20"
+                  class="mt-1 bg-cvl-green/10 p-2 rounded-lg border border-cvl-green/20 shrink-0"
                 >
                   <span class="text-cvl-green text-lg">⏱️</span>
                 </div>
                 <div>
-                  <p class="font-bold text-cvl-dark">
-                    Temps de trajet (Bouchons)
-                  </p>
+                  <p class="font-bold text-cvl-dark">Temps de trajet</p>
                   <p class="text-sm text-gray-600">
                     <span id="local-time-gain" class="font-bold text-cvl-green"
                       >...</span
                     >
-                    gagnées par an. (<span id="local-traffic"></span> perdues vs
+                    gagnées par an (<span id="local-traffic"></span> perdues vs
                     101h à Paris).
                   </p>
                 </div>
               </li>
+
               <li class="flex items-start gap-3">
                 <div
-                  class="mt-1 bg-cvl-green/10 p-2 rounded-lg border border-cvl-green/20"
+                  class="mt-1 bg-cvl-green/10 p-2 rounded-lg border border-cvl-green/20 shrink-0"
                 >
                   <span class="text-cvl-green text-lg">🌳</span>
                 </div>
                 <div>
                   <p class="font-bold text-cvl-dark">Accès à la Nature</p>
                   <p class="text-sm text-gray-600">
-                    Environ
                     <span
                       id="local-green-space"
                       class="font-bold text-cvl-green"
@@ -270,9 +292,10 @@
                   </p>
                 </div>
               </li>
-              <li class="flex items-start gap-3">
+
+              <li class="flex items-start gap-3 xl:col-span-2">
                 <div
-                  class="mt-1 bg-cvl-pale p-2 rounded-lg border border-cvl-blue/20"
+                  class="mt-1 bg-cvl-pale p-2 rounded-lg border border-cvl-blue/20 shrink-0"
                 >
                   <span class="text-cvl-blue text-lg">🏠</span>
                 </div>
@@ -303,10 +326,8 @@
         const desc = document.getElementById("job-description");
         const btn = document.getElementById("btn-read-more");
 
-        // Alterne entre tronqué et texte complet
         desc.classList.toggle("line-clamp-3");
 
-        // Met à jour le texte du bouton
         if (desc.classList.contains("line-clamp-3")) {
           btn.textContent = "Voir plus";
         } else {
@@ -314,14 +335,12 @@
         }
       }
 
-      // Fonction de vérification ultra-robuste
       function checkTextOverflow() {
         const desc = document.getElementById("job-description");
         const btn = document.getElementById("btn-read-more");
 
         if (!desc || !btn) return;
 
-        // On vérifie si le texte est long (plus de 200 caractères) ou s'il déborde physiquement
         const isLongText = desc.textContent.length > 200;
         const isOverflowing = desc.scrollHeight > desc.clientHeight;
 
@@ -332,7 +351,6 @@
         }
       }
 
-      // 1. On écoute les modifications du DOM (quand job.js injecte le texte)
       window.addEventListener("DOMContentLoaded", () => {
         const desc = document.getElementById("job-description");
         if (desc) {
@@ -345,9 +363,6 @@
         }
       });
 
-      // 2. SÉCURITÉ : On lance une vérification toutes les 500ms pendant les 4 premières secondes.
-      // Cela garantit que même si job.js est lent à charger les données depuis une API,
-      // le bouton "Voir plus" s'affichera correctement au moment où le texte apparaît.
       const intervalId = setInterval(checkTextOverflow, 500);
       setTimeout(() => clearInterval(intervalId), 4000);
     </script>
