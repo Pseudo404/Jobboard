@@ -22,7 +22,7 @@
         },
       };
     </script>
-    <title>Cap'Val - Le Pack Vie + Job</title>
+    <title>Centralis</title>
   </head>
 
   <!-- On retire les bordures du body et on ajoute flex flex-col pour structurer la page -->
@@ -83,35 +83,41 @@
       class="flex-grow border-x-[16px] sm:border-x-[32px] lg:border-x-[80px] border-cvl-green"
     >
       <main class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <section class="flex flex-col items-center text-center py-20">
+        <section
+          class="flex flex-col items-center text-center py-20 bg-[url('image.png')] bg-cover bg-center rounded-3xl border border-slate-700 shadow-lg"
+        >
           <span
-            class="rounded-full bg-cvl-yellow/20 px-4 py-1.5 text-sm font-bold text-cvl-dark mb-6 border border-cvl-yellow"
-            >🚀 Hackathon Hussar Academy</span
+            class="rounded-full bg-blue-900/50 px-3 py-1 text-sm font-medium text-blue-400 mb-6 border border-blue-800"
           >
+            🚀 Hackathon Hussar Academy
+          </span>
           <h1
-            class="text-4xl font-extrabold tracking-tight text-cvl-dark sm:text-6xl leading-tight"
+            class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl [text-stroke:2px_black] [-webkit-text-stroke:2px_black]"
           >
-            Ne choisissez plus entre <br /><span class="text-cvl-blue"
+            Ne choisissez plus entre <br /><span class="text-white"
               >un bon job et une belle vie.</span
             >
           </h1>
-          <p class="mt-6 max-w-2xl text-lg text-gray-600">
-            Découvrez les meilleures opportunités en
-            <strong class="text-cvl-dark">Centre-Val de Loire</strong> et
+          <p
+            class="mt-6 max-w-2xl text-lg text-white [text-stroke:0.2px_black] [-webkit-text-stroke:0.2px_black]"
+          >
+            Découvrez les meilleures opportunités en Centre-Val de Loire et
             comparez instantanément votre futur reste à vivre face aux grandes
             métropoles.
           </p>
-          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <div class="mt-10 flex gap-4 justify-center">
             <a
               href="#simulateur"
-              class="rounded-xl bg-cvl-blue px-8 py-4 text-base font-bold text-white shadow-lg shadow-cvl-blue/30 hover:bg-cvl-dark transition duration-300"
-              >Lancer le comparateur</a
+              class="rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 transition"
             >
+              Lancer le comparateur
+            </a>
             <a
-              href="jobs.html"
-              class="rounded-xl border border-cvl-blue/20 bg-white px-8 py-4 text-base font-bold text-cvl-dark shadow-sm hover:bg-cvl-pale transition duration-300"
-              >Voir les offres</a
+              href="#jobs"
+              class="rounded-xl border border-slate-700 bg-slate-800 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-slate-700 transition"
             >
+              Voir les offres
+            </a>
           </div>
         </section>
 
