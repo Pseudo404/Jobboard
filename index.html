@@ -81,23 +81,17 @@
     <div class="flex-grow">
       <main class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <section
-          class="flex flex-col items-center text-center py-20 bg-[url('image.png')] bg-cover bg-center rounded-3xl border border-slate-700 shadow-lg hover:zoom-in hover:scale-105 transition"
+          class="flex flex-col items-center justify-center text-center py-20 bg-[url('image.png')] bg-cover bg-center bg-slate-900/60 bg-blend-overlay rounded-3xl border border-gray-200 shadow-lg hover:scale-[1.02] transition-transform duration-300 min-h-[60vh]"
         >
-          <span
-            class="rounded-full bg-blue-900/50 px-3 py-1 text-sm font-medium text-blue-400 mb-6 border border-blue-800"
-          >
-            🚀 Hackathon Hussar Academy
-          </span>
           <h1
-            class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl [text-stroke:2px_black] [-webkit-text-stroke:2px_black]"
+            class="text-4xl font-extrabold tracking-tight text-white sm:text-6xl p-10 drop-shadow-md"
           >
-            Ne choisissez plus entre <br /><span class="text-white"
+            Ne choisissez plus entre <br /><span class="text-cvl-light"
               >un bon job et une belle vie.</span
             >
           </h1>
-          <p
-            class="mt-6 max-w-2xl text-lg text-white [text-stroke:0.2px_black] [-webkit-text-stroke:0.2px_black]"
-          >
+          <!-- Le fond gris bricolé a été retiré, le texte est maintenant pur et élégant -->
+          <p class="mt-2 max-w-2xl text-lg text-gray-100 drop-shadow">
             Découvrez les meilleures opportunités en Centre-Val de Loire et
             comparez instantanément votre futur reste à vivre face aux grandes
             métropoles.
@@ -105,13 +99,14 @@
           <div class="mt-10 flex gap-4 justify-center">
             <a
               href="#simulateur"
-              class="rounded-xl bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 transition"
+              class="rounded-xl bg-cvl-blue px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-cvl-dark transition"
             >
               Lancer le comparateur
             </a>
+            <!-- Utilisation du glassmorphism pour le bouton secondaire sur l'image -->
             <a
               href="#jobs"
-              class="rounded-xl border border-slate-700 bg-slate-800 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-slate-700 transition"
+              class="rounded-xl border border-white/30 bg-white/10 backdrop-blur-sm px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-white/20 transition"
             >
               Voir les offres
             </a>
@@ -215,7 +210,7 @@
               </h3>
               <ul class="space-y-4 text-sm text-gray-600 mb-6">
                 <li class="flex justify-between">
-                  <span>Salaire Net Mensuel</span>
+                  <span>Salaire Net Mensuel (+15% en moyenne)</span>
                   <span id="paris-net" class="font-bold text-cvl-dark"
                     >...</span
                   >
@@ -316,7 +311,8 @@
     </div>
 
     <!-- Le footer prend naturellement 100% de l'écran -->
-    <footer class="bg-cvl-dark py-8 text-center text-white text-sm w-full">
+    <hr class="border-t-1 border-cvl-blue border-opacity-25" />
+    <footer class="bg-cvl-pale py-8 text-center text-cvl-blue text-sm w-full">
       <p>Hackathon Hussar Academy - Projet Cap'Val</p>
     </footer>
 

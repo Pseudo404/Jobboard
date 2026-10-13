@@ -46,17 +46,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const calculateResteAVivre = () => {
       const salaireBrutAnnuel = Number(salaryInput.value) || 0;
       const salaireNetMensuel = (salaireBrutAnnuel * 0.75) / 12;
+      const salaireNetMensuelParis = (salaireBrutAnnuel * 0.75 * 1.15) / 12;
       const formatCurrency = (num) =>
         Math.round(num).toLocaleString("fr-FR") + " €";
       if (document.getElementById("paris-net"))
-        document.getElementById("paris-net").textContent =
-          formatCurrency(salaireNetMensuel);
+        document.getElementById("paris-net").textContent = formatCurrency(
+          salaireNetMensuelParis,
+        );
       if (document.getElementById("orleans-net"))
         document.getElementById("orleans-net").textContent =
           formatCurrency(salaireNetMensuel);
       if (document.getElementById("paris-reste"))
         document.getElementById("paris-reste").textContent = formatCurrency(
-          salaireNetMensuel - chargesParis,
+          salaireNetMensuelParis - chargesParis,
         );
       if (document.getElementById("orleans-reste"))
         document.getElementById("orleans-reste").textContent = formatCurrency(
