@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cvl: {
+                dark: "#29235C",
+                blue: "#009FE3",
+                yellow: "#F5CE2E",
+                green: "#13A538",
+                light: "#90D4F6",
+                pale: "#E6F5FC",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <title>Méthodologie & Sources - Centralis</title>
+  </head>
+  <body
+    class="min-h-screen bg-cvl-pale font-sans text-cvl-dark antialiased flex flex-col"
+  >
+    <header
+      class="sticky top-0 z-50 border-b border-cvl-blue/10 bg-white/90 backdrop-blur-md shadow-sm w-full"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+      >
+        <ul class="flex items-center gap-3 sm:gap-6">
+          <li class="p-2">
+            <a
+              href="index.html"
+              class="text-sm font-medium text-gray-600 hover:text-cvl-blue transition"
+              >Accueil</a
+            >
+          </li>
+          <li class="p-2">
+            <a
+              href="jobs.html"
+              class="text-sm font-medium text-gray-600 hover:text-cvl-blue transition"
+              >Toutes les offres</a
+            >
+          </li>
+          <li class="p-2">
+            <a
+              href="apropos.html"
+              class="text-sm font-bold text-cvl-blue transition"
+              >Méthodologie</a
+            >
+          </li>
+          <li class="p-2">
+            <a
+              href="recruteur.html"
+              class="text-sm font-medium text-gray-600 transition hover:text-cvl-blue sm:text-base"
+              >Accès recruteur</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="flex-grow">
+      <!-- On passe sur une largeur max-w-7xl pour avoir la place de faire 2 colonnes -->
+      <main class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div class="text-center mb-16">
+          <h1
+            class="text-4xl font-extrabold tracking-tight text-cvl-dark sm:text-5xl mb-6"
+          >
+            Notre Méthodologie
+          </h1>
+          <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Pour comparer l'incomparable, nous avons dû établir des règles
+            strictes. Voici comment fonctionne l'algorithme de Cap'Val et d'où
+            proviennent nos données.
+          </p>
+        </div>
+
+        <!-- Mise en place de la grille 2 colonnes -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <!-- Brique 1 : L'approche Logement & Transport (Colonne Gauche) -->
+          <section
+            class="bg-white rounded-2xl p-8 border border-cvl-blue/10 shadow-md h-full"
+          >
+            <h2
+              class="text-2xl font-bold text-cvl-blue mb-6 flex items-center gap-3"
+            >
+              Hypothèses de calcul
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+              Notre comparateur ne cherche pas à estimer au centime près les
+              dépenses individuelles, mais à fournir un ordre de grandeur fiable
+              basé sur un scénario de vie standard pour un jeune actif :
+            </p>
+            <ul class="space-y-6 text-gray-600">
+              <li class="flex items-start gap-3">
+                <span class="text-cvl-blue mt-1">➔</span>
+                <div>
+                  <strong class="text-cvl-dark block mb-1"
+                    >Le Logement (40m²)</strong
+                  >
+                  Nous nous basons sur la location d'un appartement de type T2.
+                  L'hypothèse part du principe que l'utilisateur réside dans la
+                  ville de l'offre (ou sa proche périphérie immédiate).
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-cvl-blue mt-1">➔</span>
+                <div>
+                  <strong class="text-cvl-dark block mb-1"
+                    >La prime Parisienne (+15%)</strong
+                  >
+                  Pour permettre une vraie comparaison, si aucune offre
+                  parisienne équivalente n'est fournie, nous appliquons une
+                  "prime géographique" moyenne de +15% sur le salaire brut
+                  régional pour simuler le poste en Île-de-France.
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Brique 2 : Sources des données (Colonne Droite) -->
+          <section
+            class="bg-white rounded-2xl p-8 border border-cvl-blue/10 shadow-md h-full"
+          >
+            <h2
+              class="text-2xl font-bold text-cvl-dark mb-6 flex items-center gap-3"
+            >
+              Nos sources de données
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div
+                class="p-5 border border-gray-200 rounded-xl bg-gray-50 flex flex-col justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-cvl-dark mb-2 text-lg">
+                    Temps de trajet
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-4">
+                    Trajet standard "Périphérie ➔ Centre-ville" aux heures de
+                    pointe.
+                  </p>
+                </div>
+                <div
+                  class="text-xs font-mono bg-white p-2 rounded text-cvl-blue border border-gray-200"
+                >
+                  Source: TomTom Traffic Index 2024
+                </div>
+              </div>
+
+              <div
+                class="p-5 border border-gray-200 rounded-xl bg-gray-50 flex flex-col justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-cvl-dark mb-2 text-lg">
+                    Espaces Verts
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-4">
+                    Ratio de mètres carrés de nature accessible par habitant.
+                  </p>
+                </div>
+                <div
+                  class="text-xs font-mono bg-white p-2 rounded text-cvl-green border border-gray-200"
+                >
+                  Source: Obs. des Villes Vertes
+                </div>
+              </div>
+
+              <div
+                class="p-5 border border-gray-200 rounded-xl bg-gray-50 flex flex-col justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-cvl-dark mb-2 text-lg">
+                    Immobilier Locatif
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-4">
+                    Moyenne des loyers au m² sur les baux signés les 12 derniers
+                    mois.
+                  </p>
+                </div>
+                <div
+                  class="text-xs font-mono bg-white p-2 rounded text-orange-600 border border-gray-200"
+                >
+                  Source: Obs. des Loyers / FNAIM
+                </div>
+              </div>
+
+              <div
+                class="p-5 border border-gray-200 rounded-xl bg-gray-50 flex flex-col justify-between"
+              >
+                <div>
+                  <h3 class="font-bold text-cvl-dark mb-2 text-lg">
+                    Coût de la vie
+                  </h3>
+                  <p class="text-sm text-gray-600 mb-4">
+                    Paniers alimentaires et abonnements annuels de transports.
+                  </p>
+                </div>
+                <div
+                  class="text-xs font-mono bg-white p-2 rounded text-gray-500 border border-gray-200"
+                >
+                  Source: INSEE & TAO / Navigo
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <hr class="border-t-1 border-cvl-blue border-opacity-25" />
+    <footer class="bg-cvl-pale py-8 text-center text-cvl-blue text-sm w-full">
+      <p>Hackathon Hussar Academy - Centralis</p>
+    </footer>
+  </body>
+</html>
