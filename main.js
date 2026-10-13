@@ -61,16 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const calculateResteAVivre = () => {
       const salaireBrutAnnuel = Number(salaryInput.value) || 0;
       const salaireNetMensuel = (salaireBrutAnnuel * 0.75) / 12;
+      const salaireNetMensuelParis = (salaireBrutAnnuel * 0.75 * 1.15) / 12;
       const formatCurrency = (num) =>
         Math.round(num).toLocaleString("fr-FR") + " €";
 
       if (parisNetDisplay)
-        parisNetDisplay.textContent = formatCurrency(salaireNetMensuel);
+        parisNetDisplay.textContent = formatCurrency(salaireNetMensuelParis);
       if (orleansNetDisplay)
         orleansNetDisplay.textContent = formatCurrency(salaireNetMensuel);
       if (parisResteDisplay)
         parisResteDisplay.textContent = formatCurrency(
-          salaireNetMensuel - chargesParis,
+          salaireNetMensuelParis - chargesParis,
         );
       if (orleansResteDisplay)
         orleansResteDisplay.textContent = formatCurrency(
