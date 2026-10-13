@@ -25,7 +25,6 @@
     <title>Centralis</title>
   </head>
 
-  <!-- On retire les bordures du body et on ajoute flex flex-col pour structurer la page -->
   <body
     class="min-h-screen bg-cvl-pale font-sans text-cvl-dark antialiased flex flex-col"
   >
@@ -78,13 +77,11 @@
       </nav>
     </header>
 
-    <!-- Le Wrapper qui contient les bandes vertes et s'étire sur tout l'espace disponible (flex-grow) -->
-    <div
-      class="flex-grow border-x-[16px] sm:border-x-[32px] lg:border-x-[80px] border-cvl-green"
-    >
+    <!-- Le Wrapper qui s'étire sur tout l'espace disponible (flex-grow) sans les bandes vertes -->
+    <div class="flex-grow">
       <main class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <section
-          class="flex flex-col items-center text-center py-20 bg-[url('image.png')] bg-cover bg-center rounded-3xl border border-slate-700 shadow-lg"
+          class="flex flex-col items-center text-center py-20 bg-[url('image.png')] bg-cover bg-center rounded-3xl border border-slate-700 shadow-lg hover:zoom-in hover:scale-105 transition"
         >
           <span
             class="rounded-full bg-blue-900/50 px-3 py-1 text-sm font-medium text-blue-400 mb-6 border border-blue-800"
@@ -317,7 +314,6 @@
         </section>
       </main>
     </div>
-    <!-- Fin du Wrapper avec bordures -->
 
     <!-- Le footer prend naturellement 100% de l'écran -->
     <footer class="bg-cvl-dark py-8 text-center text-white text-sm w-full">
